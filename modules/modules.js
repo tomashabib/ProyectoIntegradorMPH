@@ -1,6 +1,7 @@
 const variable = {
     nombre: "Timo",
-    apellido: "Masic"
+    apellido: "Masic",
+    edad: 19
 };
 
 module.exports = variable;
