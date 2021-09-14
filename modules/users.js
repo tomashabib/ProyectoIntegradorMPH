@@ -1,10 +1,9 @@
-const { compile } = require("ejs");
-
 const players = {
     list: [
         {
             name: 'Lionel',
             surname: 'Messi',
+            username: 'leomessi',
             height: 169,
             weight: 67,
             team: 'Paris Saint Germain',
@@ -16,6 +15,7 @@ const players = {
         {
             name: 'Cristiano',
             surname: 'Ronaldo dos Santos Aveiro',
+            username: 'CR7',
             height: 187,
             weight: 83,
             team: 'Manchester United',

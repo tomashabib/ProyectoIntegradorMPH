@@ -13,6 +13,8 @@ article.post div.info-usuario img{
     border-radius: 50px;
     padding: 1px;
     border: 1.5px solid red;
+    height: 43px;
+    width: 73px;
 }
 article.post div.info-usuario h4{
    margin: 8px 10px;

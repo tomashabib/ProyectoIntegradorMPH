@@ -82,7 +82,7 @@
               "
             >
               <img
-                src="https://via.placeholder.com/500x600"
+                src="<%= posts.image %>"
                 alt="Imagen del post"
                 class="imagen-post"
               />
@@ -95,7 +95,7 @@
                   src="https://via.placeholder.com/35"
                   alt="Foto del usuario"
                 />
-                <h3><a href="detalleUsuario.html">Nombre de usuario</a></h3>
+                <h3><a href="detalleUsuario.html"><%= posts.user.username %></a></h3>
               </div>
               <div class="lista-comentarios">
                 <div

@@ -1,27 +1,10 @@
+const posts = require('../modules/posts');
+const users = require('../modules/users');
+const comments = require('../modules/comments');
+
 const controller = {
   showIndex: function (req, res) {
-    res.render("social/index");
-  },
-  showLogin: function (req, res) {
-    res.render("social/login");
-  },
-  showRegister: function (req, res) {
-    res.render("social/registracion");
-  },
-  showAgregarPost: function (req, res) {
-    res.render("social/agregarPost");
-  },
-  showDetallePost: function (req, res) {
-    res.render("social/detallePost");
-  },
-  showDetalleUsuario: function (req, res) {
-    res.render("social/detalleUsuario");
-  },
-  showEditarPerfil: function (req, res) {
-    res.render("social/editarPerfil");
-  },
-  showMiPerfil: function (req, res) {
-    res.render("social/miPerfil");
+    res.render("social/index", {posts: posts.list, comments: comments.list});
   },
   showResultadoBusqueda: function (req, res) {
     res.render("social/resultadoBusqueda");
