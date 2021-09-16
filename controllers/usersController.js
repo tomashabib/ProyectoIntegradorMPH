@@ -24,7 +24,7 @@ const controller = {
     }
     for (let i = 0; i < posts.list.length; i++) {
       const element = posts.list[i];
-      if (element.user == username) {
+      if (element.username == username) {
         post.push(element);
       }
     }
