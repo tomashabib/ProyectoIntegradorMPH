@@ -15,7 +15,7 @@ const players = {
         {
             name: 'Cristiano',
             surname: 'Ronaldo dos Santos Aveiro',
-            username: 'CR7',
+            username: 'cristiano',
             height: 187,
             weight: 83,
             team: 'Manchester United',
@@ -27,6 +27,7 @@ const players = {
         {
             name: 'Neymar',
             surname: 'Da Silva Santos Junior',
+            username: 'neymarjr',
             height: 175,
             weight: 68,
             team: 'Paris Saint Germain',
@@ -38,6 +39,7 @@ const players = {
         {
             name: 'Kylian',
             surname: 'Mbappe',
+            username: 'k.mbappe',
             height: 178,
             weight: 73,
             team: 'Paris Saint Germain',
@@ -49,6 +51,7 @@ const players = {
         {
             name: 'Karim',
             surname: 'Benzema',
+            username: 'karimbenzema',
             height: 185,
             weight: 81,
             team: 'Real Madrid',
@@ -60,6 +63,7 @@ const players = {
         {
             name: 'Robert',
             surname: 'Lewandowski',
+            username: '_rl9',
             height: 185,
             weight: 81,
             team: 'Bayern Munchen',
@@ -71,6 +75,7 @@ const players = {
         {
             name: 'Erling Braut',
             surname: 'Haaland',
+            username: 'erling.haaland',
             height: 194,
             weight: 88,
             team: 'Borussia Dortmund',
@@ -82,6 +87,7 @@ const players = {
         {
             name: 'Romelu Menama',
             surname: 'Lukaku Bolingoli',
+            username: 'romelulukaku',
             height: 191,
             weight: 94,
             team: 'Chelsea',
@@ -93,6 +99,7 @@ const players = {
         {
             name: 'Luis Alberto',
             surname: 'Suarez Diaz',
+            username: 'luissuarez9',
             height: 182,
             weight: 86,
             team: 'Atletico de Madrid',
@@ -104,6 +111,7 @@ const players = {
         {
             name: 'Mohamed',
             surname: 'Salah Ghaly',
+            username: 'mosalah',
             height: 173,
             weight: 70,
             team: 'Liverpool',
@@ -115,6 +123,7 @@ const players = {
         {
             name: 'Sergio Leonel',
             surname: 'Aguero del Castillo',
+            username: 'kunaguero',
             height: 173,
             weight: 70,
             team: 'Barcelona',
@@ -126,6 +135,7 @@ const players = {
         {
             name: 'Harry',
             surname: 'Kane',
+            username: 'harrykane',
             height: 188,
             weight: 86,
             team: 'Tottenham Hotspur',
@@ -137,6 +147,7 @@ const players = {
         {
             name: 'Kevin',
             surname: 'De Bruyne',
+            username: 'kevindebruyne',
             height: 181,
             weight: 76,
             team: 'Manchester City',
@@ -148,6 +159,7 @@ const players = {
         {
             name: 'Paul Labile',
             surname: 'Pogba',
+            username: 'paulpogba',
             height: 191,
             weight: 84,
             team: 'Manchester United',
@@ -159,6 +171,7 @@ const players = {
         {
             name: 'Carlos Henrique',
             surname: 'Casemiro',
+            username: 'casemiro',
             height: 185,
             weight: 84,
             team: 'Real Madrid',
@@ -170,6 +183,7 @@ const players = {
         {
             name: 'Marco',
             surname: 'Verratti',
+            username: 'marco_verratti92',
             height: 165,
             weight: 60,
             team: 'Paris Saint Germain',
@@ -181,6 +195,7 @@ const players = {
         {
             name: 'Luka',
             surname: 'Modric',
+            username: 'lukamodric10',
             height: 172,
             weight: 76,
             team: 'Real Madrid',
@@ -192,6 +207,7 @@ const players = {
         {
             name: 'Sergio',
             surname: 'Busquets Burgos',
+            username: '5sergiob',
             height: 189,
             weight: 76,
             team: 'Barcelona',
@@ -203,6 +219,7 @@ const players = {
         {
             name: 'Toni',
             surname: 'Kroos',
+            username: 'toni.kr8s',
             height: 183,
             weight: 78,
             team: 'Real Madrid',
@@ -214,6 +231,7 @@ const players = {
         {
             name: 'Arturo Erasmo',
             surname: 'Vidal Pardo',
+            username: 'kingarturo23oficial',
             height: 180,
             weight: 75,
             team: 'Inter Milan',
@@ -225,6 +243,7 @@ const players = {
         {
             name: 'Frenkie',
             surname: 'de Jong',
+            username: 'frenkiedejong',
             height: 180,
             weight: 74,
             team: 'Barcelona',
@@ -236,6 +255,7 @@ const players = {
         {
             name: 'Mason Tony',
             surname: 'Mount',
+            username: 'masonmount',
             height: 178,
             weight: 70,
             team: 'Chelsea',
@@ -247,6 +267,7 @@ const players = {
         {
             name: 'Jordan Brian',
             surname: 'Henderson',
+            username: 'jhernderson',
             height: 185,
             weight: 80,
             team: 'Liverpool',
@@ -258,6 +279,7 @@ const players = {
         {
             name: 'Jude',
             surname: 'Bellingham',
+            username: 'judebellingham',
             height: 186,
             weight: 75,
             team: 'Borussia Dortmund',
@@ -269,6 +291,7 @@ const players = {
         {
             name: 'Virgil',
             surname: 'van Dijk',
+            username: 'virgilvandijk',
             height: 193,
             weight: 92,
             team: 'Liverpool',
@@ -280,6 +303,7 @@ const players = {
         {
             name: 'Raphael',
             surname: 'Varane',
+            username: 'raphaelvarane',
             height: 191,
             weight: 81,
             team: 'Manchester United',
@@ -291,6 +315,7 @@ const players = {
         {
             name: 'Sergio',
             surname: 'Ramos Garcia',
+            username: 'sergioramos',
             height: 184,
             weight: 82,
             team: 'Paris Saint Germain',
@@ -302,6 +327,7 @@ const players = {
         {
             name: 'Giorgio',
             surname: 'Chiellini',
+            username: 'giorgiochiellini',
             height: 187,
             weight: 85,
             team: 'Juventus',
@@ -313,6 +339,7 @@ const players = {
         {
             name: 'Thiago Emiliano',
             surname: 'da Silva',
+            username: 'thiagosilva',
             height: 182,
             weight: 79,
             team: 'Chelsea',
@@ -324,6 +351,7 @@ const players = {
         {
             name: 'Ruben Santos',
             surname: 'Alves Dias',
+            username: 'rubendias',
             height: 187,
             weight: 76,
             team: 'Manchester City',
@@ -335,6 +363,7 @@ const players = {
         {
             name: 'Dayot',
             surname: 'Upamecano',
+            username: 'upamecano',
             height: 186,
             weight: 90,
             team: 'Bayern Munchen',
@@ -346,6 +375,7 @@ const players = {
         {
             name: 'Reece',
             surname: 'James',
+            username: 'reecejames',
             height: 182,
             weight: 90,
             team: 'Chelsea',
@@ -357,6 +387,7 @@ const players = {
         {
             name: 'Cristian Gabriel',
             surname: 'Romero',
+            username: 'cutiromero2',
             height: 185,
             weight: 79,
             team: 'Tottenham Hotspur',
@@ -368,6 +399,7 @@ const players = {
         {
             name: 'Gerard',
             surname: 'Pique Bernabeu',
+            username: '3gerardpique',
             height: 189,
             weight: 85,
             team: 'Barcelona',
@@ -379,6 +411,7 @@ const players = {
         {
             name: 'David',
             surname: 'Alaba',
+            username: 'davidalaba',
             height: 180,
             weight: 78,
             team: 'Real Madrid',
@@ -390,6 +423,7 @@ const players = {
         {
             name: 'Milan',
             surname: 'Skriniar',
+            username: 'milanskriniar',
             height: 188,
             weight: 80,
             team: 'Inter Milan',
@@ -401,6 +435,7 @@ const players = {
         {
             name: 'Manuel Peter',
             surname: 'Neuer',
+            username: 'manuelneuer',
             height: 193,
             weight: 93,
             team: 'Bayern Munchen',
@@ -412,6 +447,7 @@ const players = {
         {
             name: 'Marc Andre',
             surname: 'Ter Stegen',
+            username: 'mterstegen1',
             height: 187,
             weight: 85,
             team: 'Barcelona',
@@ -423,6 +459,7 @@ const players = {
         {
             name: 'Jan',
             surname: 'Oblak',
+            username: 'oblakjan',
             height: 188,
             weight: 87,
             team: 'Atletico de Madrid',
@@ -434,6 +471,7 @@ const players = {
         {
             name: 'Thibaut',
             surname: 'Courtois',
+            username: 'thibautcourtois',
             height: 200,
             weight: 96,
             team: 'Real Madrid',
@@ -445,6 +483,7 @@ const players = {
         {
             name: 'Keylor Antonio',
             surname: 'Navas Gamboa',
+            username: 'keylornavas1',
             height: 185,
             weight: 79,
             team: 'Paris Saint Germain',
@@ -456,6 +495,7 @@ const players = {
         {
             name: 'David',
             surname: 'de Gea',
+            username: 'd_degeaofficial',
             height: 192,
             weight: 76,
             team: 'Manchester United',
@@ -467,6 +507,7 @@ const players = {
         {
             name: 'Alisson Ramses',
             surname: 'Becker',
+            username: 'alissonbecker',
             height: 191,
             weight: 88,
             team: 'Liverpool',
@@ -478,6 +519,7 @@ const players = {
         {
             name: 'Hugo Hadrien Dominique',
             surname: 'Lloris',
+            username: 'hugolloris',
             height: 188,
             weight: 80,
             team: 'Tottenham Hotspur',
@@ -489,6 +531,7 @@ const players = {
         {
             name: 'Ederson Santana',
             surname: 'de Moraes',
+            username: 'ederson93',
             height: 188,
             weight: 89,
             team: 'Manchester City',
@@ -500,6 +543,7 @@ const players = {
         {
             name: 'Samir',
             surname: 'Handanovic',
+            username: 'samirhandanovic',
             height: 193,
             weight: 92,
             team: 'Inter Milan',
@@ -511,6 +555,7 @@ const players = {
         {
             name: 'Gianluigi',
             surname: 'Donnarumma',
+            username: 'gigiodonna99',
             height: 196,
             weight: 90,
             team: 'Paris Saint Germain',
@@ -522,6 +567,7 @@ const players = {
         {
             name: 'Rui Pedro',
             surname: 'dos Santos Patricio',
+            username: 'rpatricio1',
             height: 190,
             weight: 86,
             team: 'AS Roma',
