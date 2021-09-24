@@ -8,17 +8,17 @@
         <div class="">
           <nav class="" uk-navbar>
             <div class="uk-navbar-left">
-              <h2 class="logo"><a href="index.html">FootBlog</a></h2>
+              <h2 class="logo"><a href="/index">FootBlog</a></h2>
             </div>
             <div class="uk-navbar-center">
               <ul class="uk-flex uk-flex-between uk-flex-middle">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="registracion.html">Registro</a></li>
-                <li><a href="login.html">Login</a></li>
+                <li><a href="/index">Home</a></li>
+                <li><a href="/users/register">Registro</a></li>
+                <li><a href="/users/login">Login</a></li>
               </ul>
             </div>
             <div class="uk-navbar-right">
-              <a href="agregarPost.html">Agregar post</a>
+              <a href="/post/agregarPost">Agregar post</a>
               <form action="" class="uk-search uk-search-default">
                 <span uk-search-icon></span>
                 <input
@@ -51,9 +51,9 @@
           <article class="post uk-card-default uk-flex uk-flex-column">
               <div class="info-usuario uk-flex">
                 <div>
-                  <img src="<%= posts[index].profilePicture %> " alt="" />
+                  <a href="/users/detalleUsuario/<%= posts[index].user.username %>"><img src="<%= posts[index].profilePicture %> " alt="" /></a>
                 </div>
-                <h4><a href="detalleUsuario.html"><%= posts[index].user.username %></a></h4>
+                <h4><a href="/users/detalleUsuario/<%= posts[index].user.username %>"><%= posts[index].user.username %></a></h4>
               </div>
               <div class="post-body uk-flex uk-flex-center">
                 <a href="detallePost.html">
