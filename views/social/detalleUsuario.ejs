@@ -3,22 +3,24 @@
   <%- include('../partials/head') %>
   
   <body>
-    <%- include('../partials/headerDeslogueado') %>
+    <%- include('../partials/headerLogueado') %>
 
     <main>
       <div class="uk-section uk-section-small">
         <div class="uk-container uk-container-small">
           <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
             <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
+              <a href="/users/detalleUsuario/0">
               <img
                 src="https://via.placeholder.com/150"
                 alt="foto de perfil"
                 class="foto-perfil"
               />
+            </a>
             </div>
             <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
               <div class="uk-flex uk-flex-middle">
-                <h3 class="uk-margin-remove"><%= user.username %></h3>
+                <h3 class="uk-margin-remove">Nombre de Usuario</h3>
                 <button
                   class="
                     uk-button uk-button-small uk-button-primary uk-margin-left

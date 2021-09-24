@@ -29,7 +29,7 @@ const controller = {
       }
     }
     if (user) {
-      res.render("social/detalleUsuario", { user: user, posts: posts });
+      res.render("social/detalleUsuario", { user: users, posts: posts });
     } else {
       return "error";
     }
@@ -38,7 +38,7 @@ const controller = {
     res.render("social/editarPerfil");
   },
   showMiPerfil: function (req, res) {
-    res.render("social/miPerfil");
+    res.render("social/miPerfil", {user: users, posts: posts});
   },
 };
 
