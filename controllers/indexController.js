@@ -4,7 +4,7 @@ const comments = require('../modules/comments');
 
 const controller = {
   showIndex: function (req, res) {
-    res.render("social/index", {posts: posts.list, comments: comments.list});
+    res.render("social/index", {posts: posts.list, comments: comments.list, users: users.list});
   },
   showResultadoBusqueda: function (req, res) {
     res.render("social/resultadoBusqueda");

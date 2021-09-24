@@ -375,7 +375,7 @@ const players = {
             birthDate: 22-9-1984,
             age: 36,
             nacionality: 'Brazil',
-            id: "28",
+            id: 28,
         },
         {
             name: 'Ruben Santos',

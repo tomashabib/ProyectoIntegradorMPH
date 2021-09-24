@@ -57,7 +57,7 @@
                 <h4><a href="/users/detalleUsuario/<%= posts[index].user.username %>"><%= posts[index].user.username %></a></h4>
               </div>
               <div class="post-body uk-flex uk-flex-center">
-                <a href="detallePost.html">
+                <a href="/post/detallePost/<%= posts[index].id %>">
                   <img src="<%= posts[index].image %>" alt="" />
                 </a>
               </div>
@@ -72,7 +72,7 @@
                 </ul>
                 <div class="post-pie uk-flex">
                   <h5 class="uk-width-1-6">
-                    <a href="detalleUsuario.html"><%= posts[index].user.username %></a>
+                    <a href="/users/detalleUsuario/<%= posts[index].user.username %>"><%= posts[index].user.username %></a>
                   </h5>
                   <p class="uk-width-5-6"><%= posts[index].postCaption %></p>
                 </div>
@@ -82,7 +82,7 @@
                 <ul>
                   <% for( let index = 0; index < comments.length; index++ ) { %>
                   <li>
-                    <a href="detalleUsuario.html">Usuario</a>
+                    <a href="detalleUsuario.html"></a>
                     <p>Comentario</p>
                   </li>
                   <% } %>
