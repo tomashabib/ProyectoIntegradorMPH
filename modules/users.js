@@ -11,7 +11,7 @@ const players = {
             birthDate: 24-7-1987,
             age: 34,
             nacionality: 'Argentina',
-            id: "0",
+            id: 0,
         },
         {
             name: 'Cristiano',
@@ -24,7 +24,7 @@ const players = {
             birthDate: 5-2-1985,
             age: 36,
             nacionality: 'Portugal',
-            id: "1",
+            id: 1,
         },
         {
             name: 'Neymar',
@@ -37,7 +37,7 @@ const players = {
             birthDate: 5-2-1992,
             age: 29,
             nacionality: 'Brazil',
-            id: "2",
+            id: 2,
         },
         {
             name: 'Kylian',
@@ -50,7 +50,7 @@ const players = {
             birthDate: 20-12-1998,
             age: 22,
             nacionality: 'France',
-            id: "3",
+            id: 3,
         },
         {
             name: 'Karim',
@@ -63,7 +63,7 @@ const players = {
             birthDate: 19-12-1987,
             age: 33,
             nacionality: 'France',
-            id: "4",
+            id: 4,
         },
         {
             name: 'Robert',
@@ -76,7 +76,7 @@ const players = {
             birthDate: 21-8-1988,
             age: 33,
             nacionality: 'Poland',
-            id: "5",
+            id: 5,
         },
         {
             name: 'Erling Braut',
@@ -89,7 +89,7 @@ const players = {
             birthDate: 21-7-2000,
             age: 21,
             nacionality: 'Norway',
-            id: "6",
+            id: 6,
         },
         {
             name: 'Romelu Menama',
@@ -102,7 +102,7 @@ const players = {
             birthDate: 13-5-1993,
             age: 28,
             nacionality: 'Belgium',
-            id: "7",
+            id: 7,
         },
         {
             name: 'Luis Alberto',
@@ -115,7 +115,7 @@ const players = {
             birthDate: 24-1-1987,
             age: 34,
             nacionality: 'Uruguay',
-            id: "8",
+            id: 8,
         },
         {
             name: 'Mohamed',
@@ -128,7 +128,7 @@ const players = {
             birthDate: 15-6-1992,
             age: 29,
             nacionality: 'Egypt',
-            id: "9",
+            id: 9,
         },
         {
             name: 'Sergio Leonel',
@@ -141,7 +141,7 @@ const players = {
             birthDate: 2-6-1988,
             age: 33,
             nacionality: 'Argentina',
-            id: "10",
+            id: 10,
         },
         {
             name: 'Harry',
@@ -154,7 +154,7 @@ const players = {
             birthDate: 28-7-1993,
             age: 28,
             nacionality: 'England',
-            id: "11",
+            id: 11,
         },
         {
             name: 'Kevin',
@@ -167,7 +167,7 @@ const players = {
             birthDate: 28-6-1991,
             age: 30,
             nacionality: 'Belgium',
-            id: "12",
+            id: 12,
         },
         {
             name: 'Paul Labile',
@@ -180,7 +180,7 @@ const players = {
             birthDate: 15-3-1993,
             age: 28,
             nacionality: 'France',
-            id: "13",
+            id: 13,
         },
         {
             name: 'Carlos Henrique',
@@ -193,7 +193,7 @@ const players = {
             birthDate: 23-2-1992,
             age: 29,
             nacionality: 'Brazil',
-            id: "14",
+            id: 14,
         },
         {
             name: 'Marco',
@@ -206,7 +206,7 @@ const players = {
             birthDate: 5-11-1992,
             age: 28,
             nacionality: 'Italy',
-            id: "15",
+            id: 15,
         },
         {
             name: 'Luka',
@@ -219,7 +219,7 @@ const players = {
             birthDate: 9-9-1985,
             age: 35,
             nacionality: 'Croatia',
-            id: "16",
+            id: 16,
         },
         {
             name: 'Sergio',
@@ -232,7 +232,7 @@ const players = {
             birthDate: 16-7-1988,
             age: 33,
             nacionality: 'Spain',
-            id: "17",
+            id: 17,
         },
         {
             name: 'Toni',
@@ -245,7 +245,7 @@ const players = {
             birthDate: 4-1-1990,
             age: 31,
             nacionality: 'Germany',
-            id: "18",
+            id: 18,
         },
         {
             name: 'Arturo Erasmo',
@@ -258,7 +258,7 @@ const players = {
             birthDate: 22-5-1987,
             age: 34,
             nacionality: 'Chile',
-            id: "19",
+            id: 19,
         },
         {
             name: 'Frenkie',
@@ -271,7 +271,7 @@ const players = {
             birthDate: 12-5-1997,
             age: 24,
             nacionality: 'Netherlands',
-            id: "20",
+            id: 20,
         },
         {
             name: 'Mason Tony',
