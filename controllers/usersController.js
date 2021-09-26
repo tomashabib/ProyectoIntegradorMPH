@@ -11,25 +11,14 @@ const controller = {
     res.render("social/registracion");
   },
   showDetalleUsuario: function (req, res) {
-    // res.render("social/detalleUsuario");
     var username = req.params.username;
-    var user;
-    var post = [];
-
-    for (let i = 0; i < users.list.length; i++) {
-      const element = users.list[i];
-      if (element.username == username) {
-        user = element;
-      }
-    }
-    for (let i = 0; i < posts.list.length; i++) {
-      const element = posts.list[i];
-      if (element.username == username) {
-        post.push(element);
-      }
-    }
+    var user = users.findUsername(username);
+    var usernamePost = posts.findUsername(username);
     if (user) {
-      res.render("social/detalleUsuario", { user: users, posts: posts });
+      res.render("social/detalleUsuario", {
+        user: user,
+        usernamePost: usernamePost,
+      });
     } else {
       return "error";
     }
@@ -38,7 +27,7 @@ const controller = {
     res.render("social/editarPerfil");
   },
   showMiPerfil: function (req, res) {
-    res.render("social/miPerfil", {user: users, posts: posts});
+    res.render("social/miPerfil", { user: users, posts: posts });
   },
 };
 

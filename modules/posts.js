@@ -18,7 +18,8 @@ const posts = {
         "https://ca-times.brightspotcdn.com/dims4/default/c5f4011/2147483647/strip/true/crop/1329x820+0+0/resize/840x518!/quality/90/?url=https%3A%2F%2Fcalifornia-times-brightspot.s3.amazonaws.com%2F4e%2F7a%2F7cf4817c4f04b9673e8dbb48ce5f%2Fmessi15a.jpg",
       profilePicture:
         "https://www.soyfutbol.com/__export/1628333569988/sites/debate/img/2021/08/07/messi_psg_contrato_firma_crop1628333423417.jpg_943222218.jpg",
-      postCaption: "Feliz! Con muchas ganas de comenzar esta nueva etapa de mi carrera deportiva.",
+      postCaption:
+        "Feliz! Con muchas ganas de comenzar esta nueva etapa de mi carrera deportiva.",
       user: users.list.find((e) => e.username == "leomessi"),
       username: "leomessi",
     },
@@ -38,7 +39,8 @@ const posts = {
         "https://cdn.vanguardngr.com/wp-content/uploads/2021/09/images-87.jpeg",
       profilePicture:
         "https://bolavip.com/__export/1608581891017/sites/bolavip/img/2020/12/21/mohamed_salah_liverpool_crop1608581889973.jpg_242310155.jpg",
-      postCaption: "Great win in front of our fans! We keep pushing. Thanks for the support.",
+      postCaption:
+        "Great win in front of our fans! We keep pushing. Thanks for the support.",
       user: users.list.find((e) => e.username == "mosalah"),
       username: "mosalah",
     },
@@ -53,13 +55,24 @@ const posts = {
       username: "erling.haaland",
     },
   ],
-  //   find: function (id) {
-  //     for (let i = 0; i < posts.list.length; i++) {
-  //       if (posts.lista[i].id == id) {
-  //         return posts.list[i];
-  //       }
-  //     }
-  //   },
+  findId: function (id) {
+    for (let i = 0; i < posts.list.length; i++) {
+      const element = posts.list[i];
+      if (element.id == id) {
+        return element;
+      }
+    }
+  },
+  findUsername: function (username) {
+    var usernames = [];
+    for (let i = 0; i < posts.list.length; i++) {
+      const element = posts.list[i];
+      if (element.username == username) {
+        usernames.push(element.image);
+      }
+    }
+    return usernames;
+  },
 };
 
 module.exports = posts;
