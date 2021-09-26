@@ -52,10 +52,9 @@
                 <h6>Comentarios</h6>
                 <ul>
                   <% for( let index = 0; index < comments.length; index++ ) { %>
-                  <li>
-                    <a href="detalleUsuario.html"></a>
-                    <p>Comentario</p>
-                  </li>
+                    <h6 class="uk-margin-remove uk-width-2-4">
+                      <a href="detalleUsuario.html"><%= comments[index].username %> </a> <%= comments[index].comentario %> 
+                    </h6>
                   <% } %>
                   <a href="">Ver más...</a>
                 </ul>
