@@ -635,6 +635,7 @@ const players = {
       id: "47",
     },
   ],
+  // filtrar por username, agarra solo al jugador que tenga mismo username que pasamos a la funcion
   findUsername: function (username) {
     for (let i = 0; i < players.list.length; i++) {
       const element = players.list[i];

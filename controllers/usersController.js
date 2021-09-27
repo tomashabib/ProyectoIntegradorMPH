@@ -10,6 +10,7 @@ const controller = {
   showRegister: function (req, res) {
     res.render("social/registracion");
   },
+  // funcion para clasificar por username
   showDetalleUsuario: function (req, res) {
     var username = req.params.username;
     var user = users.findUsername(username);
@@ -28,10 +29,10 @@ const controller = {
     var user = users.findUsername(username);
     var usernamePost = posts.findUsername(username);
     if (user) {
-    res.render("social/miPerfil", { user: user, usernamePost });
-  } else {
+      res.render("social/miPerfil", { user: user, usernamePost });
+    } else {
       return "error";
-    }  
+    }
   },
 };
 

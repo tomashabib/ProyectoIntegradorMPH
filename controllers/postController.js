@@ -8,18 +8,21 @@ const controller = {
   },
   showDetallePost: function (req, res) {
     // res.render("social/detallePost", {posts: posts.list , comments: comments.list});
-    for (let i = 0; i < posts.list.length; i++) {
-      const element = posts.list[i];
-      if (element.id == req.params.id) {
-        res.render("social/detallePost", {
-          posts: element,
-          comments: comments.list,
-          users,
-          listado: posts.list,
-        });
-      }
+    // for (let i = 0; i < posts.list.length; i++) {
+    //   const element = posts.list[i];
+    //   if (element.id == req.params.id) {
+    //     res.render("social/detallePost", {
+    //       posts: element,
+    //       comments: comments.list,
+    //       users,
+    //       listado: posts.list,
+    //     });
+    //   }
+    // }
+    var posteo = posts.findId(req.params.id);
+    if (posteo) {
+      res.render("social/detallePost", { posts: posteo });
     }
-    // falta agregar si hay algun error
   },
 };
 

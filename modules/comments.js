@@ -91,6 +91,16 @@ const comments = {
       id_post: 4,
     },
   ],
+  findPostId: function (postId) {
+    listadoComments = [];
+    for (let i = 0; i < comments.list.length; i++) {
+      const element = comments.list[i];
+      if (element.id_post == postId) {
+        listadoComments.push(element);
+      }
+    }
+    return listadoComments;
+  },
 };
 
 module.exports = comments;

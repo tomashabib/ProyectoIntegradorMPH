@@ -1,4 +1,5 @@
 let users = require("./users");
+var comments = require("./comments");
 
 const posts = {
   list: [
@@ -9,6 +10,7 @@ const posts = {
       profilePicture:
         "https://estaticos-cdn.sport.es/clip/24a12ea8-9380-4181-ba6c-dda114a22c30_alta-libre-aspect-ratio_default_0.jpg",
       postCaption: "Fresh start.",
+      commentarios: comments.findPostId(0),
       user: users.list.find((e) => e.username == "cristiano"),
       username: "cristiano",
     },
@@ -63,6 +65,7 @@ const posts = {
       }
     }
   },
+  // agarra a todos los objetos que tengan como username el username que le pasamos a la funcion
   findUsername: function (username) {
     for (let i = 0; i < posts.list.length; i++) {
       const element = posts.list[i];
