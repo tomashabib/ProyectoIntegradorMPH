@@ -26,9 +26,11 @@ const controller = {
   showEditarPerfil: function (req, res) {
     res.render("social/editarPerfil");
   },
-  showMiPerfil: function (req, res) {
+    showMiPerfil: function (req, res) {
     res.render("social/miPerfil", { user: users, posts: posts });
   },
 };
+
+
 
 module.exports = controller;
