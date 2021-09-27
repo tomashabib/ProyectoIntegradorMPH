@@ -1,18 +1,28 @@
-.info-usuario .foto-perfil{
-    border-radius: 50%;
+.info-usuario .foto-perfil {
+  border-radius: 50%;
 }
 
-.info-usuario .red-usuario{
-    list-style: none;
-    padding: 0  ;
+.info-usuario .red-usuario {
+  list-style: none;
+  padding: 0;
 }
 
-.muro{
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid lightgray;
+.muro {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid lightgray;
 }
-.muro .link-detalle{
-    color: gray;
-    text-decoration: none;
+.muro .link-detalle {
+  color: gray;
+  text-decoration: none;
+}
+.nombre-perfil {
+  background-color: white;
+}
+.perfil-seccion {
+  background-color: white;
+  padding-top: 10px;
+}
+.posteos-seccion {
+  background-color: white;
 }

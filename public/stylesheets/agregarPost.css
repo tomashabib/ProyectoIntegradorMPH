@@ -1,0 +1,17 @@
+.formulario-agregar-post {
+  display: flex;
+  width: 50%;
+  margin-left: 25%;
+  height: 750px;
+}
+
+.formulario-entero-agregar-post {
+  display: flex;
+  width: 50%;
+  margin-left: 25%;
+  background-color: white;
+}
+
+.files-upload {
+  margin: 20px;
+}

@@ -4,7 +4,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,600&display=swap");
 
 .pie-de-foto {
-  padding-left: 20px;
+  padding-left: 40px;
   font-family: "Yanone Kaffeesatz", sans-serif;
   letter-spacing: 1px;
 }
@@ -15,6 +15,7 @@
 .nombre-perfil-pie {
   color: black;
   font-family: "Inter", sans-serif; /* Distinta letra*/
+  padding-right: 20px;
 }
 .comentarios-perfiles {
   font-family: "Crimson Text", serif;

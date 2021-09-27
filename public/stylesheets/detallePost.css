@@ -1,8 +1,12 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,600&display=swap");
+
 .detalle-post {
   background-color: white;
 }
 .data-posteador {
   margin: 10px;
+  font-family: "Inter", sans-serif; /* Distinta letra*/
 }
 section.detalle-container {
   border: 1px solid lightgray;
@@ -12,6 +16,7 @@ article.detalle-post {
 }
 .lista-comentarios {
   padding-top: 10px;
+  font-family: "Crimson Text", serif;
 }
 .comentarios-detalle {
   border-left: 1px solid lightgray;
