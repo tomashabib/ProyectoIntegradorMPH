@@ -39,7 +39,9 @@
                   alt="Foto del usuario"
                 />
                 <h3>
-                  <a href="detalleUsuario.html" style="color: black"
+                  <a
+                    href="/users/detalleUsuario/<%= posts.user.username %>"
+                    style="color: black"
                     ><%= posts.user.username %></a
                   >
                 </h3>
@@ -57,7 +59,8 @@
                     />
                   </div>
                   <h6 class="uk-margin-remove uk-width-2-4">
-                    <a href="detalleUsuario.html"
+                    <a
+                      href="/users/detalleUsuario/<%= comments[index].username %>"
                       ><%= comments[index].username %></a
                     >
                     <%= comments[index].comentario %>
