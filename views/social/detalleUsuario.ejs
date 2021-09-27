@@ -10,24 +10,20 @@
         <div class="uk-container uk-container-small">
           <section class="info-usuario uk-flex uk-flex-around uk-width-1-1">
             <div class="uk-width-1-3 uk-flex uk-flex-center uk-flex-middle">
-              <a href="/users/detalleUsuario/0">
-                <img
-                  src="<%= user.profilePicture %> "
-                  alt="foto de perfil"
-                  class="foto-perfil"
-                />
-              </a>
+              <img
+                src="<%= user.profilePicture%>"
+                alt="foto de perfil"
+                class="foto-perfil"
+              />
             </div>
             <div class="uk-width-2-3 uk-flex uk-flex-column uk-flex-around">
               <div class="uk-flex uk-flex-middle">
-                <h3 class="uk-margin-remove"><%= user.username %></h3>
-                <button
-                  class="
-                    uk-button uk-button-small uk-button-primary uk-margin-left
-                  "
-                >
-                  Seguir
-                </button>
+                <h3 class="uk-margin-remove"><%= user.username%></h3>
+                <a
+                  href="/users/editarPerfil"
+                  uk-icon="icon:cog; ratio: 1.2"
+                  class="uk-margin-left"
+                ></a>
               </div>
               <div>
                 <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
@@ -38,12 +34,13 @@
               </div>
             </div>
           </section>
+
           <section class="muro uk-flex uk-flex-middle uk-flex-center">
-            <!-- Aca arrancan los posteos del usuario -->
             <div
               class="uk-grid uk-child-width-1-3 uk-width-1-1 uk-margin-remove"
               uk-grid
             >
+            
               <div
                 class="
                   uk-card
@@ -55,15 +52,16 @@
                   uk-flex-center
                 "
               >
-                <a href="detallePost.html" class="link-detalle">
+                <a href="/post/detallePost/<%= usernamePost.id %> " class="link-detalle">
                   <img
-                    src="<%= usernamePost.image %> "
+                    src="<%=usernamePost.image%>"
                     alt="foto de perfil"
                     class="foto-perfil"
                   />
-                  <p class="uk-text-center">Lorem ipsum</p>
+                  <p class="uk-text-center"><%= usernamePost.postCaption %> </p>
                 </a>
               </div>
+              
           </section>
         </div>
       </div>

@@ -15,10 +15,7 @@ const controller = {
     var user = users.findUsername(username);
     var usernamePost = posts.findUsername(username);
     if (user) {
-      res.render("social/detalleUsuario", {
-        user: user,
-        usernamePost: usernamePost,
-      });
+      res.render("social/detalleUsuario", { user: user, usernamePost });
     } else {
       return "error";
     }
@@ -26,11 +23,9 @@ const controller = {
   showEditarPerfil: function (req, res) {
     res.render("social/editarPerfil");
   },
-    showMiPerfil: function (req, res) {
+  showMiPerfil: function (req, res) {
     res.render("social/miPerfil", { user: users, posts: posts });
   },
 };
-
-
 
 module.exports = controller;

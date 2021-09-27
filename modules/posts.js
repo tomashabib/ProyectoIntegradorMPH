@@ -64,14 +64,13 @@ const posts = {
     }
   },
   findUsername: function (username) {
-    var usernames = [];
     for (let i = 0; i < posts.list.length; i++) {
       const element = posts.list[i];
       if (element.username == username) {
-        usernames.push(element.image);
+        // listado.push(element);
+        return element;
       }
     }
-    return usernames;
   },
 };
 

@@ -11,7 +11,12 @@ const controller = {
     for (let i = 0; i < posts.list.length; i++) {
       const element = posts.list[i];
       if (element.id == req.params.id) {
-        res.render("social/detallePost", { posts: element });
+        res.render("social/detallePost", {
+          posts: element,
+          comments: comments.list,
+          users,
+          listado: posts.list,
+        });
       }
     }
     // falta agregar si hay algun error
