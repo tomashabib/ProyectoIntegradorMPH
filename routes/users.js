@@ -6,7 +6,7 @@ var controller = require("../controllers/usersController");
 router.get("/register", controller.showRegister);
 router.get("/detalleUsuario/:username", controller.showDetalleUsuario);
 router.get("/editarPerfil", controller.showEditarPerfil);
-router.get("/miPerfil", controller.showMiPerfil);
+router.get("/miPerfil/:username", controller.showMiPerfil);
 router.get("/login", controller.showLogin);
 
 module.exports = router;
