@@ -24,7 +24,14 @@ const controller = {
     res.render("social/editarPerfil");
   },
   showMiPerfil: function (req, res) {
-    res.render("social/miPerfil", { user: users, posts: posts });
+    var username = req.params.username;
+    var user = users.findUsername(username);
+    var usernamePost = posts.findUsername(username);
+    if (user) {
+    res.render("social/miPerfil", { user: user, usernamePost });
+  } else {
+      return "error";
+    }  
   },
 };
 
