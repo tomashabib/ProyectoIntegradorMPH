@@ -1,6 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,600&display=swap");
 
+.foto-del-perfil-posteo {
+  height: 50px;
+  width: 25%;
+  margin-bottom: 10px;
+}
 .posteo-entero {
   height: 700px;
 }

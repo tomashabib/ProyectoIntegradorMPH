@@ -19,6 +19,10 @@
 }
 .comentarios-perfiles {
   font-family: "Crimson Text", serif;
+  color: rgb(104, 104, 104);
+}
+.link-comentarios {
+  color: black;
 }
 article.post {
   border: 1px solid lightgray;

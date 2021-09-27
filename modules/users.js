@@ -4,6 +4,8 @@ const players = {
       name: "Lionel",
       surname: "Messi",
       username: "leomessi",
+      profilePicture:
+        "https://www.soyfutbol.com/__export/1628333569988/sites/debate/img/2021/08/07/messi_psg_contrato_firma_crop1628333423417.jpg_943222218.jpg",
       height: 169,
       weight: 67,
       team: "Paris Saint Germain",
@@ -32,6 +34,8 @@ const players = {
       name: "Neymar",
       surname: "Da Silva Santos Junior",
       username: "neymarjr",
+      profilePicture:
+        "https://as01.epimg.net/futbol/imagenes/2020/12/19/internacional/1608381295_937891_1608381394_noticia_normal_recorte1.jpg",
       height: 175,
       weight: 68,
       team: "Paris Saint Germain",
@@ -84,6 +88,8 @@ const players = {
       name: "Erling Braut",
       surname: "Haaland",
       username: "erling.haaland",
+      profilePicture:
+        "https://e.rpp-noticias.io/normal/2021/06/18/293029_1109573.jpg",
       height: 194,
       weight: 88,
       team: "Borussia Dortmund",
@@ -123,6 +129,8 @@ const players = {
       name: "Mohamed",
       surname: "Salah Ghaly",
       username: "mosalah",
+      profilePicture:
+        "https://bolavip.com/__export/1608581891017/sites/bolavip/img/2020/12/21/mohamed_salah_liverpool_crop1608581889973.jpg_242310155.jpg",
       height: 173,
       weight: 70,
       team: "Liverpool",
