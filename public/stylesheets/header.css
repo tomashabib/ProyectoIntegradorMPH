@@ -28,6 +28,8 @@ header a:hover {
 
 .logo {
   margin: 0px;
+  font-family: "Glory", sans-serif; /* Cambie font de FOOTBLOG */
+  color: white;
 }
 .logo a {
   font-family: "Glory", sans-serif; /* Cambie font de FOOTBLOG */
