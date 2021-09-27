@@ -1,6 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@1,600&display=swap");
 
+.posteo-entero {
+  height: 700px;
+}
 .detalle-post {
   background-color: white;
 }
