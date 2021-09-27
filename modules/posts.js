@@ -67,7 +67,6 @@ const posts = {
     for (let i = 0; i < posts.list.length; i++) {
       const element = posts.list[i];
       if (element.username == username) {
-        // listado.push(element);
         return element;
       }
     }

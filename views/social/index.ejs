@@ -19,13 +19,22 @@
               uk-width-1-1
             "
           >
-          <% for( let index = 0; index < posts.length; index++ ) { %>
-          <article class="post uk-card-default uk-flex uk-flex-column">
+            <% for( let index = 0; index < posts.length; index++ ) { %>
+            <article class="post uk-card-default uk-flex uk-flex-column">
               <div class="info-usuario uk-flex">
                 <div>
-                  <a href="/users/detalleUsuario/<%= posts[index].user.username %>"><img src="<%= posts[index].profilePicture %> " alt="" /></a>
+                  <a
+                    href="/users/detalleUsuario/<%= posts[index].user.username %>"
+                    ><img src="<%= posts[index].profilePicture %> " alt=""
+                  /></a>
                 </div>
-                <h4><a href="/users/detalleUsuario/<%= posts[index].user.username %>"><%= posts[index].user.username %></a></h4>
+                <h4>
+                  <a
+                    class="nombre-perfil"
+                    href="/users/detalleUsuario/<%= posts[index].user.username %>"
+                    ><%= posts[index].user.username %></a
+                  >
+                </h4>
               </div>
               <div class="post-body uk-flex uk-flex-center">
                 <a href="/post/detallePost/<%= posts[index].id %>">
@@ -43,24 +52,33 @@
                 </ul>
                 <div class="post-pie uk-flex">
                   <h5 class="uk-width-1-6">
-                    <a href="/users/detalleUsuario/<%= posts[index].user.username %>"><%= posts[index].user.username %></a>
+                    <a
+                      class="nombre-perfil-pie"
+                      href="/users/detalleUsuario/<%= posts[index].user.username %>"
+                      ><%= posts[index].user.username %></a
+                    >
                   </h5>
-                  <p class="uk-width-5-6"><%= posts[index].postCaption %></p>
+                  <p class="uk-width-5-6 pie-de-foto">
+                    <%= posts[index].postCaption %>
+                  </p>
                 </div>
               </div>
               <div class="post-comentarios">
                 <h6>Comentarios</h6>
                 <ul>
                   <% for( let index = 0; index < comments.length; index++ ) { %>
-                    <h6 class="uk-margin-remove uk-width-2-4">
-                      <a href="detalleUsuario.html"><%= comments[index].username %> </a> <%= comments[index].comentario %> 
-                    </h6>
+                  <h6 class="uk-margin-remove uk-width-2-4">
+                    <a href="detalleUsuario.html"
+                      ><%= comments[index].username %>
+                    </a>
+                    <%= comments[index].comentario %>
+                  </h6>
                   <% } %>
                   <a href="">Ver más...</a>
                 </ul>
               </div>
             </article>
-            <% } %> 
+            <% } %>
           </section>
         </div>
       </div>

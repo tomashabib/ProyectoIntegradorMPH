@@ -22,6 +22,10 @@ header a:hover {
   color: lightsteelblue;
   text-decoration: none;
 }
+.fondo {
+  background-color: rgb(104, 104, 104) !important;
+}
+
 .logo {
   margin: 0px;
 }

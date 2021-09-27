@@ -1,13 +1,16 @@
-footer{
-    height: 40px;
-    color: white;
-    padding: 0 10px;
+footer {
+  height: 40px;
+  color: white;
+  padding: 0 10px;
+}
+.fondo {
+  background-color: rgb(104, 104, 104) !important;
 }
 
-footer ul{
-    list-style: none;
+footer ul {
+  list-style: none;
 }
 
-footer ul li{
-    margin-top: 0;
+footer ul li {
+  margin-top: 0;
 }
