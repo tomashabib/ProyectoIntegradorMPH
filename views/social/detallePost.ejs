@@ -48,7 +48,8 @@
                 </h3>
               </div>
               <!-- Lista de comments -->
-              <%for (let i = 0; i < posts.length; i++) { %>
+              <% for (let i = 0; i < posts.commentarios.length; i++) { const
+              element = posts.commentarios[i]; %>
               <div class="lista-comentarios">
                 <div
                   class="comentario uk-flex uk-flex-middle uk-margin-small-top"
@@ -60,7 +61,10 @@
                     />
                   </div>
                   <h6 class="uk-margin-remove uk-width-2-4">
-                    <%= posts.comentario %>
+                    <a href="/users/detalleUsuario/<%= element.username %>"
+                      ><%= element.username %></a
+                    >
+                    <%= element.comentario %>
                   </h6>
                   <a
                     href=""
