@@ -7,12 +7,27 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     username: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
-    name: {
+    firstName: {
       type: DataTypes.STRING,
     },
     surname: {
+      type: DataTypes.STRING,
+    },
+    team: {
+      type: DataTypes.STRING,
+    },
+    gamePosition: {
+      type: DataTypes.STRING,
+    },
+    birthDate: {
+      type: DataTypes.DATE,
+    },
+    age: {
+      type: DataTypes.INTEGER,
+    },
+    nationality: {
       type: DataTypes.STRING,
     },
   };

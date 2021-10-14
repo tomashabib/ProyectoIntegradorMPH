@@ -41,15 +41,15 @@
                 />
                 <h3>
                   <a
-                    href="/users/detalleUsuario/<%= posts.user.username %>"
+                    href="/users/detalleUsuario/<%= posts.user_id %>"
                     style="color: black"
-                    ><%= posts.user.username %></a
+                    ><%= posts.user_id %></a
                   >
                 </h3>
               </div>
               <!-- Lista de comments -->
-              <% for (let i = 0; i < posts.commentarios.length; i++) { const
-              element = posts.commentarios[i]; %>
+              <!-- <% for (let i = 0; i < posts.commentarios.length; i++) { const
+              element = posts.commentarios[i]; %> -->
               <div class="lista-comentarios">
                 <div
                   class="comentario uk-flex uk-flex-middle uk-margin-small-top"

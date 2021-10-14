@@ -1,7 +1,7 @@
 module.exports = (sequelize, DataTypes) => {
   const alias = "Comments";
   const cols = {
-    id: {
+    comment_id: {
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
@@ -12,7 +12,7 @@ module.exports = (sequelize, DataTypes) => {
     post_id: {
       type: DataTypes.STRING,
     },
-    contenido: {
+    com: {
       type: DataTypes.STRING,
     },
   };
