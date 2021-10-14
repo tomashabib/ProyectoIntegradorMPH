@@ -1,7 +1,5 @@
-const posts = require("../modules/posts");
-const users = require("../modules/users");
-const comments = require("../modules/comments");
-// const { post } = require("../routes/users");
+const db = require('../database/models');
+
 
 const controller = {
   showLogin: function (req, res) {
@@ -11,15 +9,11 @@ const controller = {
     res.render("social/registracion");
   },
   // funcion para clasificar por username
-  showDetalleUsuario: function (req, res) {
-    var username = req.params.username;
-    var user = users.findUsername(username);
-    var usernamePost = posts.findUsername(username);
-    if (user) {
-      res.render("social/detalleUsuario", { user: user, usernamePost });
-    } else {
-      return "error";
-    }
+  showDetalleUsuario: async function (req, res) {
+    var user = await b.Users. findByPk(req.params.username);
+    var usernamePost = await db.Posts.findAll({where: {username: req.params.username}});
+  
+    res.render("social/detalleUsuario", { user, usernamePost });
   },
   showEditarPerfil: function (req, res) {
     res.render("social/editarPerfil");

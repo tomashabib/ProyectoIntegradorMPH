@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Posts";
+  const alias = "Comments";
   const cols = {
     id: {
       autoIncrement: true,
@@ -9,20 +9,21 @@ module.exports = (sequelize, DataTypes) => {
     user_id: {
       type: DataTypes.INTEGER,
     },
+    post_id: {
+      type: DataTypes.STRING,
+    },
     contenido: {
       type: DataTypes.STRING,
     },
-    image: {
-      type: DataTypes.STRING,
-    },
   };
+
   const config = {
-    tableName: "post",
+    tableName: "comments",
     timestamps: false,
     underscored: true,
   };
 
-  const Posts = sequelize.define(alias, cols, config);
+  const Comments = sequelize.define(alias, cols, config);
 
-  return Posts;
+  return Comments;
 };

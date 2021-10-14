@@ -1,28 +1,28 @@
 module.exports = (sequelize, DataTypes) => {
-  const alias = "Posts";
+  const alias = "Users";
   const cols = {
     id: {
       autoIncrement: true,
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    user_id: {
+    username: {
       type: DataTypes.INTEGER,
     },
-    contenido: {
+    name: {
       type: DataTypes.STRING,
     },
-    image: {
+    surname: {
       type: DataTypes.STRING,
     },
   };
   const config = {
-    tableName: "post",
+    tableName: "users",
     timestamps: false,
     underscored: true,
   };
 
-  const Posts = sequelize.define(alias, cols, config);
+  const Users = sequelize.define(alias, cols, config);
 
-  return Posts;
+  return Users;
 };
