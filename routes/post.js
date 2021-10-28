@@ -5,6 +5,7 @@ var posts = require("../modules/posts");
 
 /* GET users listing. */
 router.get("/agregarPost", controller.showAgregarPost);
+router.post("/agregarPost", controller.store);
 router.get("/detallePost/:id", controller.showDetallePost);
 
 module.exports = router;
