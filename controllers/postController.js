@@ -15,6 +15,13 @@ const controller = {
 
     res.render("social/detallePost", { posteo, comments });
   },
+  store: function (req, res) {
+    console.log(req.body);
+    db.Posts.create({
+      post_caption: req.body.post_caption
+    }),
+    res.redirect('/index')
+  }
 };
 
 module.exports = controller;
