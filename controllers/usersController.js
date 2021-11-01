@@ -10,7 +10,7 @@ const controller = {
   },
   // funcion para clasificar por username
   showDetalleUsuario: async function (req, res) {
-    var user = await b.Users. findByPk(req.params.username);
+    var user = await db.Users. findByPk(req.params.username);
     var usernamePost = await db.Posts.findAll({where: {username: req.params.username}});
   
     res.render("social/detalleUsuario", { user, usernamePost });
