@@ -7,7 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     profile_picture: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING,
     },
     post_caption: {
       type: DataTypes.STRING,

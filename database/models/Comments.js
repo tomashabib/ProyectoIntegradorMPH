@@ -10,7 +10,7 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.INTEGER,
     },
     post_id: {
-      type: DataTypes.STRING,
+      type: DataTypes.INTEGER,
     },
     com: {
       type: DataTypes.STRING,

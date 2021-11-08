@@ -1,5 +1,5 @@
 const db = require('../database/models');
-
+const op = db.sequelize.Op
 
 const controller = {
   showLogin: function (req, res) {

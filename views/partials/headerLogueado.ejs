@@ -14,15 +14,15 @@
         <div class="uk-navbar-right">
           <a href="/post/agregarPost">Agregar post</a>
           <a href="/users/miPerfil/cristiano">Mi perfil</a>
-          <form action="" class="uk-search uk-search-default">
+          <form action="/resultadoBusqueda" class="uk-search uk-search-default">
             <span uk-search-icon></span>
-            <a href="/resultadoBusqueda">
             <input
               type="search"
               class="uk-search-input"
               placeholder="Buscar..."
+              name="criteria"
+              id="criteria"
             />
-            </a>
           </form>
         </div>
       </nav>
