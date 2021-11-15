@@ -30,6 +30,12 @@ module.exports = (sequelize, DataTypes) => {
     nationality: {
       type: DataTypes.STRING,
     },
+    email: {
+      type: DataTypes.STRING,
+    },
+    password: {
+      type: DataTypes.STRING,
+    },
   };
   const config = {
     tableName: "users",
