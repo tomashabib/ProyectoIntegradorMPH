@@ -8,6 +8,13 @@ const controller = {
   },
   showDetallePost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id);
+    var users = await db.Users.findOne({
+      where: [
+        {
+          id: posts.user_id,
+        },
+      ],
+    });
     if (!posts) {
       return res.render("error");
     }
@@ -16,7 +23,7 @@ const controller = {
       where: { post_id: req.params.id },
     });
 
-    res.render("social/detallePost", { posts, comments });
+    res.render("social/detallePost", { posts, comments, users });
   },
   store: function (req, res) {
     // console.log(req.body);

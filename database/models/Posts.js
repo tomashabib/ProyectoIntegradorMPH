@@ -6,9 +6,7 @@ module.exports = (sequelize, DataTypes) => {
       primaryKey: true,
       type: DataTypes.INTEGER,
     },
-    profile_picture: {
-      type: DataTypes.STRING,
-    },
+
     post_caption: {
       type: DataTypes.STRING,
     },
@@ -16,8 +14,8 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
     user_id: {
-      type: DataTypes.INTEGER
-    }
+      type: DataTypes.INTEGER,
+    },
   };
   const config = {
     tableName: "post",
