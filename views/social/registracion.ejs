@@ -17,7 +17,7 @@
           "
           style="height: 655px"
         >
-          <form action="/users/login" style="background-color: white" method="POST">
+          <form action="/users/register" style="background-color: white" method="POST">
             <div class="row g-3" style="margin: 20px">
               <div class="col" style="margin: 20px">
                 <label for="name">First Name</label>
@@ -28,6 +28,7 @@
                   aria-label="First name"
                   name="firstName"
                   id="firstName"
+                  required
                 />
               </div>
               <div class="col" style="margin: 20px">
@@ -39,6 +40,7 @@
                   aria-label="Last name"
                   name="surname"
                   id="surname"
+                  required
                 />
               </div>
             </div>
@@ -54,6 +56,7 @@
                 placeholder="Username"
                 name="username"
                 id="username"
+                required
               />
             </div>
             <div class="mb-3" style="margin: 20px">
@@ -67,64 +70,26 @@
                 placeholder="Email"
                 name="email"
                 id="email"
+                required
               />
             </div>
-            div class="mb-3" style="margin: 20px">
-              <label for="formGroupExampleInput" class="form-label"
+              <label for="formGroupExampleInput" class="form-label" id="password" name="password"
                 >Password</label
               >
               <input
-                type="text"
+                type="password"
                 class="form-control"
                 id="formGroupExampleInput"
                 placeholder="Password"
                 name="password"
                 id="password"
+                required
               />
+              <label for="image">Imagen de perfil</label>
+              <input type="file" />
+              <input type="submit"  style="margin: 20px" />
             </div>
-            <div class="mb-3" style="margin: 20px">
-              <label for="formGroupExampleInput" class="form-label"
-                >Nationality</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="formGroupExampleInput"
-                placeholder="Nationality"
-                name="nationality"
-                id="nationality"
-              />
-            </div>
-            <div class="mb-3" style="margin: 20px">
-              <label for="formGroupExampleInput2" class="form-label"
-                >Team</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="formGroupExampleInput2"
-                placeholder="Team"
-                name="team"
-                id="team"
-              />
-            </div>
-              </div>
-            </div>
-            <br />
-            <select
-              class="form-select"
-              aria-label="Default select example"
-              style="margin: 20px"
-            >
-              <option selected>Open this select menu</option>
-              <option value="1">Forward</option>
-              <option value="2">Midfielder</option>
-              <option value="3">Defender</option>
-              <option value="4">Goalkeeper</option>
-            </select>
-            <label for="image">Imagen de perfil</label>
-            <input type="file" />
-            <input type="submit" name="Register" id="" style="margin: 20px" />
+            
           </form>
         </div>
       </div>

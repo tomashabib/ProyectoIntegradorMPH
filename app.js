@@ -3,6 +3,7 @@ var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+const session = require("express-session");
 
 var indexRouter = require("./routes/index");
 var usersRouter = require("./routes/users");
@@ -11,6 +12,18 @@ var db = require("./database/models");
 
 var app = express();
 // db.sequelize.sync({ alter: true });
+
+//configuracion de session
+app.use(
+  session({
+    secret: "secret",
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+      maxAge: 1000 * 60 * 60 * 24 * 30,
+    },
+  })
+);
 
 // view engine setup
 app.set("views", path.join(__dirname, "views"));
@@ -22,6 +35,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
+//middlewares
+
+//routers
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
 app.use("/post", postRouter);

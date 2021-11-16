@@ -3,9 +3,24 @@ const op = db.sequelize.Op;
 const bcrypt = require("bcryptjs");
 
 const controller = {
-  showLogin: function (req, res) {
-    res.render("social/login");
+  showLogin: async function (req, res) {
+    if (req.method == "POST") {
+      const user = await db.Users.findOne({
+        where: [{ username: req.body.username }],
+      });
+      if (!user) {
+        res.send("No existe el Usuario");
+      }
+      if (bcrypt.compareSync(req.body.password, user.password)) {
+        res.redirect("/index");
+      } else {
+        res.send("Constrasena Incorrecta");
+      }
+    } else {
+      res.render("social/login");
+    }
   },
+
   showRegister: function (req, res) {
     res.render("social/registracion");
   },

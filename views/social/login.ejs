@@ -17,20 +17,15 @@
           "
           style="height: 655px"
         >
-          <form style="background-color: white">
+          <form style="background-color: white" method="POST">
             <div class="mb-3" style="margin: 20px">
-              <label for="exampleInputEmail1" class="form-label"
-                >Email address</label
-              >
+              <label for="username" class="form-label">Username</label>
               <input
-                type="email"
+                type="text"
                 class="form-control"
-                id="exampleInputEmail1"
-                aria-describedby="emailHelp"
+                id="username"
+                name="username"
               />
-              <div id="emailHelp" class="form-text" style="margin: 20px">
-                We'll never share your email with anyone else.
-              </div>
             </div>
             <div class="mb-3" style="margin: 20px">
               <label for="exampleInputPassword1" class="form-label"
@@ -39,7 +34,8 @@
               <input
                 type="password"
                 class="form-control"
-                id="exampleInputPassword1"
+                id="password"
+                name="password"
               />
             </div>
             <div class="mb-3 form-check" style="margin: 20px">
