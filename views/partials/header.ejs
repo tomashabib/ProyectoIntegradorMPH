@@ -1,0 +1,52 @@
+<% if (app.user) { %> 
+    <header class="uk-background-primary fondo">
+        <section class="uk-container uk-container-large">
+          <div class="">
+            <nav class="" uk-navbar>
+              <div class="uk-navbar-left">
+                <h2 class="logo"><a href="/index">FootBlog</a></h2>
+                <span style="margin-left: 70px; color: white;"> Bienvenido @<%= app.user.username %> </span>
+              </div>
+              <div class="uk-navbar-center">
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li><a href="/index">Home</a></li>
+                  <li><a href="/users/logout">Logout</a></li>
+                </ul>
+              </div>
+              <div class="uk-navbar-right">
+                <a href="/post/agregarPost">Agregar post</a>
+                <a href="/users/miPerfil/cristiano">Mi perfil</a>
+                <form action="/resultadoBusqueda" class="uk-search uk-search-default">
+                  <span uk-search-icon></span>
+                  <input
+                    type="search"
+                    class="uk-search-input"
+                    placeholder="Buscar..."
+                    name="criteria"
+                    id="criteria"
+                  />
+                </form>
+              </div>
+            </nav>
+          </div>
+        </section>
+      </header>          
+<% } else{ %>
+    <header class="uk-background-primary fondo">
+        <section class="uk-container uk-container-large">
+          <div class="">
+            <nav class="" uk-navbar>
+              <div class="uk-navbar-left">
+                <h2 class="logo">FootBlog</h2>
+              </div>
+              <div class="uk-navbar-center">
+                <ul class="uk-flex uk-flex-between uk-flex-middle">
+                  <li><a href="/users/register">Registro</a></li>
+                  <li><a href="/users/login">Login</a></li>
+                </ul>
+              </div>
+              
+          </div>
+        </section>
+      </header>
+<% } %>

@@ -29,6 +29,7 @@ const controller = {
     // console.log(req.body);
     db.Posts.create({
       post_caption: req.body.post_caption,
+      user_id: req.session.user.id,
     })
       .then((post) => {
         res.redirect("/index");

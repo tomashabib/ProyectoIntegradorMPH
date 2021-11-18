@@ -12,6 +12,10 @@ const controller = {
         res.send("No existe el Usuario");
       }
       if (bcrypt.compareSync(req.body.password, user.password)) {
+        req.session.user = user;
+        if (req.body.recordarme) {
+          res.cookie("user", user, { maxAge: 1000 * 60 * 60 * 24 });
+        }
         res.redirect("/index");
       } else {
         res.send("Constrasena Incorrecta");
@@ -19,6 +23,11 @@ const controller = {
     } else {
       res.render("social/login");
     }
+  },
+  logout: function (req, res, next) {
+    res.clearCookie("user");
+    req.session.user = null;
+    res.redirect("/index");
   },
 
   showRegister: function (req, res) {
@@ -48,14 +57,6 @@ const controller = {
     res.render("social/editarPerfil");
   },
   showMiPerfil: async function (req, res) {
-    // var username = req.params.username;
-    // var user = users.findUsername(username);
-    // var usernamePost = posts.findUsername(username);
-    // if (user) {
-    //   res.render("social/miPerfil", { user: user, usernamePost });
-    // } else {
-    //   return "error";
-    // }
     var usuarios = await db.Users.findByPk(req.params.id);
     if (!usuarios) {
       return res.render("error");

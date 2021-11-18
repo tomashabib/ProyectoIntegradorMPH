@@ -20,7 +20,7 @@ app.use(
     resave: false,
     saveUninitialized: true,
     cookie: {
-      maxAge: 1000 * 60 * 60 * 24 * 30,
+      maxAge: 1000 * 60 * 60 * 24 * 7,
     },
   })
 );
@@ -36,7 +36,21 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "public")));
 
 //middlewares
-
+// middleware cookie
+app.use(async (req, res, next) => {
+  if (req.cookies.user !== undefined && req.session.user === undefined) {
+    req.session.user = req.cookies.user;
+  }
+  next(); //deje clase 19 1:35:00
+});
+// middleware session
+app.use(async (req, res, next) => {
+  res.locals.app = {};
+  if (req.session.user !== undefined) {
+    res.locals.app.user = req.session.user;
+  }
+  next();
+});
 //routers
 app.use("/", indexRouter);
 app.use("/users", usersRouter);
