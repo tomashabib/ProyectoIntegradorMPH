@@ -46,23 +46,27 @@ const controller = {
 
   // funcion para clasificar por username
   showDetalleUsuario: async function (req, res) {
-    var user = await db.Users.findByPk(req.params.id);
-    var usernamePost = await db.Posts.findAll({
-      where: { user_id: req.params.id },
+    var user = await db.Users.findByPk(req.params.id, {
+      include: [{ association: "post" }],
     });
 
-    res.render("social/detalleUsuario", { user, usernamePost });
+    res.render("social/detalleUsuario", { user });
   },
   showEditarPerfil: function (req, res) {
     res.render("social/editarPerfil");
   },
   showMiPerfil: async function (req, res) {
-    var usuarios = await db.Users.findByPk(req.params.id);
-    if (!usuarios) {
-      return res.render("error");
+    if (!req.session.user) {
+      res.send("No estas logueado");
     }
+    var user = await db.Users.findByPk(req.session.user.id, {
+      include: [{ association: "post" }],
+    });
+    // if (!user) {
+    //   return res.render("error");
+    // }
 
-    res.render("social/detallePost", { usuarios });
+    res.render("social/miPerfil", { user });
   },
 };
 
