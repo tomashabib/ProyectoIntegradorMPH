@@ -6,16 +6,9 @@ const op = db.Sequelize.Op;
 
 const controller = {
   showIndex: async function (req, res) {
-    // db.Posts.findAll()
-    //  .then((posts) => {
-    //    res.render("social/index", {posts});
-    //  })
-
-    //  .catch((error) => {
-    //    res.send(error)
-    //  })
-    var posteos = await db.Posts.findAll();
-    // Para ver la foto de perfil hay q hacer con association
+    var posteos = await db.Posts.findAll({
+      include: [{ association: "author" }],
+    });
     if (!posteos) {
       return res.render("error");
     }

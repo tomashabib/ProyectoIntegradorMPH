@@ -7,7 +7,19 @@ const controller = {
     res.render("social/agregarPost");
   },
   showDetallePost: async function (req, res) {
-    var posts = await db.Posts.findByPk(req.params.id);
+    var posts = await db.Posts.findByPk(req.params.id, {
+      include: [{ association: "comments" }],
+    });
+
+    if (!posts) {
+      return res.render("error");
+    }
+
+    var comments = await db.Comments.findAll({
+      where: { post_id: req.params.id },
+      include: [{ association: "commenter" }],
+    });
+
     var users = await db.Users.findOne({
       where: [
         {
@@ -15,14 +27,6 @@ const controller = {
         },
       ],
     });
-    if (!posts) {
-      return res.render("error");
-    }
-
-    var comments = await db.Comments.findAll({
-      where: { post_id: req.params.id },
-    });
-
     res.render("social/detallePost", { posts, comments, users });
   },
   store: function (req, res) {
