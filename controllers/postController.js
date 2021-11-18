@@ -29,18 +29,25 @@ const controller = {
     });
     res.render("social/detallePost", { posts, comments, users });
   },
-  store: function (req, res) {
+  store: async function (req, res) {
     // console.log(req.body);
-    db.Posts.create({
+    // db.Posts.create({
+    //   post_caption: req.body.post_caption,
+    //   user_id: req.session.user.id,
+    // })
+    //   .then((post) => {
+    //     res.redirect("/index");
+    //   })
+    //   .catch((error) => {
+    //     return res.render(error);
+    //   });
+    console.log(req.body)
+    var posts = await db.Posts.create({
       post_caption: req.body.post_caption,
-      user_id: req.session.user.id,
-    })
-      .then((post) => {
-        res.redirect("/index");
-      })
-      .catch((error) => {
-        return res.render(error);
-      });
+      user_id: req.session.user.id
+    });
+    
+    res.redirect("/index");
   },
   editarPost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id);
