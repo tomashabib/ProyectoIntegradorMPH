@@ -35,7 +35,7 @@
             >
               <div class="info-post uk-flex uk-flex-middle data-posteador">
                 <img
-                  src="<%= users.profile_picture %> "
+                  src="<%= posts.author.profile_picture %> "
                   alt="Foto del usuario"
                   class="foto-del-perfil-posteo"
                 />
@@ -43,7 +43,7 @@
                   <a
                     href="/users/detalleUsuario/<%= posts.user_id %>"
                     style="color: black"
-                    ><%= users.username %></a
+                    ><%= posts.author.username %></a
                   >
                 </h3>
                 <% if ( app.user && app.user.id == posts.user_id) { %>
@@ -55,7 +55,7 @@
                 <% } %>
               </div>
               <!-- Lista de comments -->
-            <% comments.forEach(comment => { %> 
+            <% posts.comments.forEach(comment => { %> 
               <div class="lista-comentarios">
                 <div
                   class="comentario uk-flex uk-flex-middle uk-margin-small-top"

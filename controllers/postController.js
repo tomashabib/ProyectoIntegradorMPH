@@ -8,26 +8,15 @@ const controller = {
   },
   showDetallePost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id, {
-      include: [{ association: "comments" }],
+      include: [
+        { association: "author" },
+        { association: "comments", include: [{ association: "commenter" }] },
+      ],
     });
-
     if (!posts) {
       return res.render("error");
     }
-
-    var comments = await db.Comments.findAll({
-      where: { post_id: req.params.id },
-      include: [{ association: "commenter" }],
-    });
-
-    var users = await db.Users.findOne({
-      where: [
-        {
-          id: posts.user_id,
-        },
-      ],
-    });
-    res.render("social/detallePost", { posts, comments, users });
+    res.render("social/detallePost", { posts });
   },
   store: async function (req, res) {
     // console.log(req.body);
@@ -41,12 +30,12 @@ const controller = {
     //   .catch((error) => {
     //     return res.render(error);
     //   });
-    console.log(req.body)
+    console.log(req.body);
     var posts = await db.Posts.create({
       post_caption: req.body.post_caption,
-      user_id: req.session.user.id
+      user_id: req.session.user.id,
     });
-    
+
     res.redirect("/index");
   },
   editarPost: async function (req, res) {
