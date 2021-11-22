@@ -1,68 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-  <body>
-    <%- include('../partials/header') %>
+<body>
+  <%- include('../partials/header') %>
 
-    <main>
-      <div class="uk-section uk-section-small">
-        <div class="uk-container uk-container-large uk-flex">
-          <section
-            id="posts"
-            class="
+  <main>
+    <div class="uk-section uk-section-small">
+      <div class="uk-container uk-container-large uk-flex">
+        <section id="posts" class="
               uk-flex
               uk-flex-middle
               uk-flex-center
               uk-flex-column
               uk-child-width-1-2
               uk-width-1-1
-            "
-          >
-            <% posteos.forEach(post => { %>
-            <article class="post uk-card-default uk-flex uk-flex-column">
-              <div class="info-usuario uk-flex">
-                <div>
-                  <a href="/users/detalleUsuario/<%= post.user_id %>"
-                    ><img src="<%= post.author.profile_picture %> " alt=""
-                  /></a>
-                </div>
-                <h4>
-                  <a
-                    class="nombre-perfil"
-                    href="/users/detalleUsuario/<%= post.author.id %>"
-                    ><%= post.author.username %></a
-                  >
-                </h4>
+            ">
+          <% posteos.forEach(post => { %>
+          <article class="post uk-card-default uk-flex uk-flex-column">
+            <div class="info-usuario uk-flex">
+              <div>
+                <a href="/users/detalleUsuario/<%= post.user_id %>"><img src="<%= post.author.profile_picture %> "
+                    alt="" /></a>
               </div>
-              <div class="post-body uk-flex uk-flex-center">
-                <a href="/post/detallePost/<%= post.id %>">
-                  <img src="<%= post.image %>" alt="" />
-                </a>
+              <h4>
+                <a class="nombre-perfil"
+                  href="/users/detalleUsuario/<%= post.author.id %>"><%= post.author.username %></a>
+              </h4>
+            </div>
+            <div class="post-body uk-flex uk-flex-center">
+              <a href="/post/detallePost/<%= post.id %>">
+                <img src="<%= post.image %>" alt="" />
+              </a>
+            </div>
+            <div class="post-reacciones">
+              <ul class="post-icons uk-flex uk-flex-between">
+                <li>
+                  <span class="" uk-icon="icon:heart; ratio: 1.3"></span>
+                </li>
+                <li>
+                  <span class="" uk-icon="icon:comments; ratio: 1.3"></span>
+                </li>
+              </ul>
+              <div class="post-pie uk-flex">
+                <h5 class="uk-width-1-6">
+                  <a class="nombre-perfil-pie"
+                    href="/users/detalleUsuario/<%= post.user_id %>"><%= post.author.username %></a>
+                </h5>
+                <p class="uk-width-5-6 pie-de-foto">
+                  <%= post.post_caption %>
+                </p>
               </div>
-              <div class="post-reacciones">
-                <ul class="post-icons uk-flex uk-flex-between">
-                  <li>
-                    <span class="" uk-icon="icon:heart; ratio: 1.3"></span>
-                  </li>
-                  <li>
-                    <span class="" uk-icon="icon:comments; ratio: 1.3"></span>
-                  </li>
-                </ul>
-                <div class="post-pie uk-flex">
-                  <h5 class="uk-width-1-6">
-                    <a
-                      class="nombre-perfil-pie"
-                      href="/users/detalleUsuario/<%= post.user_id %>"
-                      ><%= post.author.username %></a
-                    >
-                  </h5>
-                  <p class="uk-width-5-6 pie-de-foto">
-                    <%= post.post_caption %>
-                  </p>
-                </div>
-                <!-- lista de comentarios -->
-                <!-- <%//for (let i = 0; i < posteos.comments.length; i++) { 
+              <!-- lista de comentarios -->
+              <!-- <%//for (let i = 0; i < posteos.comments.length; i++) { 
                   //const element = array[i];  %>
                     // <div class="lista-comentarios">
                     //   <div
@@ -87,14 +77,15 @@
                     //     ></a>
                     //   </div>
                 <%//} %>-->
-              </div>
-            </article>
-            <% }) %>
-          </section>
-        </div>
+            </div>
+          </article>
+          <% }) %>
+        </section>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <%- include('../partials/footer') %>
-  </body>
+  <%- include('../partials/footer') %>
+</body>
+
 </html>

@@ -1,100 +1,57 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-  <body>
-    <%- include('../partials/header') %>
+<body>
+  <%- include('../partials/header') %>
 
-    <main>
-      <div class="uk-section uk-section-small">
-        <div
-          class="
+  <main>
+    <div class="uk-section uk-section-small">
+      <div class="
             uk-container
             uk-container-large
             uk-flex
             uk-flex-middle
             uk-flex-center
-          "
-          style="height: 655px"
-        >
-          <form action="/users/register" style="background-color: white" method="POST">
-            <div class="row g-3" style="margin: 20px">
-              <div class="col" style="margin: 20px">
-                <label for="name">First Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="First name"
-                  aria-label="First name"
-                  name="firstName"
-                  id="firstName"
-                  required
-                />
-              </div>
-              <div class="col" style="margin: 20px">
-                <label for="name">Last Name</label>
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Last name"
-                  aria-label="Last name"
-                  name="surname"
-                  id="surname"
-                  required
-                />
-              </div>
+          " style="height: 655px">
+        <form action="/users/register" style="background-color: white" method="POST">
+          <div class="row g-3" style="margin: 20px">
+            <div class="col" style="margin: 20px">
+              <label for="name">First Name</label>
+              <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstName"
+                id="firstName" required />
             </div>
-            <br />
-            <div class="mb-3" style="margin: 20px">
-              <label for="formGroupExampleInput" class="form-label"
-                >Username</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="formGroupExampleInput"
-                placeholder="Username"
-                name="username"
-                id="username"
-                required
-              />
+            <div class="col" style="margin: 20px">
+              <label for="name">Last Name</label>
+              <input type="text" class="form-control" placeholder="Last name" aria-label="Last name" name="surname"
+                id="surname" required />
             </div>
-            <div class="mb-3" style="margin: 20px">
-              <label for="formGroupExampleInput" class="form-label"
-                >Email</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="formGroupExampleInput"
-                placeholder="Email"
-                name="email"
-                id="email"
-                required
-              />
-            </div>
-              <label for="formGroupExampleInput" class="form-label" id="password" name="password"
-                >Password</label
-              >
-              <input
-                type="password"
-                class="form-control"
-                id="formGroupExampleInput"
-                placeholder="Password"
-                name="password"
-                id="password"
-                required
-              />
-              <label for="image">Imagen de perfil</label>
-              <input type="file" />
-              <input type="submit"  style="margin: 20px" />
-            </div>
-            
-          </form>
-        </div>
+          </div>
+          <br />
+          <div class="mb-3" style="margin: 20px">
+            <label for="formGroupExampleInput" class="form-label">Username</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Username" name="username"
+              id="username" required />
+          </div>
+          <div class="mb-3" style="margin: 20px">
+            <label for="formGroupExampleInput" class="form-label">Email</label>
+            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email"
+              id="email" required />
+          </div>
+          <label for="formGroupExampleInput" class="form-label" id="password" name="password">Password</label>
+          <input type="password" class="form-control" id="formGroupExampleInput" placeholder="Password" name="password"
+            id="password" required />
+          <label for="image">Imagen de perfil</label>
+          <input type="file" />
+          <input type="submit" style="margin: 20px" />
       </div>
-    </main>
 
-    <%- include('../partials/footer') %>
-  </body>
+      </form>
+    </div>
+    </div>
+  </main>
+
+  <%- include('../partials/footer') %>
+</body>
+
 </html>

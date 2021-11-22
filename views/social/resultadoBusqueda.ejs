@@ -1,55 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-  <body>
-    <%- include('../partials/header') %>
+<body>
+  <%- include('../partials/header') %>
 
-    <main>
-      <div class="uk-section uk-section-small" style="height: 750px">
-        <div
-          class="
+  <main>
+    <div class="uk-section uk-section-small" style="height: 750px">
+      <div class="
             uk-container
             uk-container-large
             uk-flex
             uk-flex-middle
             uk-flex-center
-          "
-          style="background-color: white; height: 200px; width: 30%"
-        >
-          <% if (posts.length == 0) { %>
-          <div class="alert alert-danger" role="alert">
-            Lo sentimos, no hemos encontrado resultados para <%= criteria %> .
-          </div>
-          <% } else { %> <% posts.forEach(post => { %>
-          <div class="card mb-3">
-            <div class="row g-0">
-              <div class="col-md-4">
-                <a href="/post/detallePost/<%= post.id %>"
-                  ><img
-                    src="<%= post.image %>"
-                    class="img-cover rounded-start"
-                    alt="..."
-                /></a>
-              </div>
-              <div class="col-md-8">
-                <div class="card-body">
-                  <p>
-                    <a href="/users/detalleUsuario/<%= post.user_id %>"
-                      ><%= post.author.username %></a
-                    >
-                  </p>
-                  <p></p>
-                  <p><%= post.content %></p>
-                </div>
+          " style="background-color: white; height: 200px; width: 30%">
+        <% if (posts.length == 0) { %>
+        <div class="alert alert-danger" role="alert">
+          Lo sentimos, no hemos encontrado resultados para <%= criteria %> .
+        </div>
+        <% } else { %> <% posts.forEach(post => { %>
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <a href="/post/detallePost/<%= post.id %>"><img src="<%= post.image %>" class="img-cover rounded-start"
+                  alt="..." /></a>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <p>
+                  <a href="/users/detalleUsuario/<%= post.user_id %>"><%= post.author.username %></a>
+                </p>
+                <p></p>
+                <p><%= post.content %></p>
               </div>
             </div>
           </div>
-          <% }) %> <% } %>
         </div>
+        <% }) %> <% } %>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <%- include('../partials/footer') %>
-  </body>
+  <%- include('../partials/footer') %>
+</body>
+
 </html>

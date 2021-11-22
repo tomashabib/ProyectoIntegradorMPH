@@ -6,7 +6,9 @@ const controller = {
   showLogin: async function (req, res) {
     if (req.method == "POST") {
       const user = await db.Users.findOne({
-        where: [{ username: req.body.username }],
+        where: [{
+          username: req.body.username
+        }],
       });
       if (!user) {
         res.send("No existe el Usuario");
@@ -14,7 +16,9 @@ const controller = {
       if (bcrypt.compareSync(req.body.password, user.password)) {
         req.session.user = user;
         if (req.body.recordarme) {
-          res.cookie("user", user, { maxAge: 1000 * 60 * 60 * 24 });
+          res.cookie("user", user, {
+            maxAge: 1000 * 60 * 60 * 24
+          });
         }
         res.redirect("/index");
       } else {
@@ -47,10 +51,14 @@ const controller = {
   // funcion para clasificar por username
   showDetalleUsuario: async function (req, res) {
     var user = await db.Users.findByPk(req.params.id, {
-      include: [{ association: "post" }],
+      include: [{
+        association: "post"
+      }],
     });
 
-    res.render("social/detalleUsuario", { user });
+    res.render("social/detalleUsuario", {
+      user
+    });
   },
   showEditarPerfil: function (req, res) {
     res.render("social/editarPerfil");
@@ -60,13 +68,17 @@ const controller = {
       res.send("No estas logueado");
     }
     var user = await db.Users.findByPk(req.session.user.id, {
-      include: [{ association: "post" }],
+      include: [{
+        association: "post"
+      }],
     });
     // if (!user) {
     //   return res.render("error");
     // }
 
-    res.render("social/miPerfil", { user });
+    res.render("social/miPerfil", {
+      user
+    });
   },
 };
 

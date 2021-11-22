@@ -8,15 +8,23 @@ const controller = {
   },
   showDetallePost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id, {
-      include: [
-        { association: "author" },
-        { association: "comments", include: [{ association: "commenter" }] },
+      include: [{
+          association: "author"
+        },
+        {
+          association: "comments",
+          include: [{
+            association: "commenter"
+          }]
+        },
       ],
     });
     if (!posts) {
       return res.render("error");
     }
-    res.render("social/detallePost", { posts });
+    res.render("social/detallePost", {
+      posts
+    });
   },
   store: async function (req, res) {
     // console.log(req.body);
@@ -43,16 +51,19 @@ const controller = {
     if (!posts) {
       return res.render("error");
     }
-    res.render("social/editarPost", { posts });
+    res.render("social/editarPost", {
+      posts
+    });
   },
   update: function (req, res) {
     // console.log(req.body);
-    db.Posts.update(
-      {
+    db.Posts.update({
         post_caption: req.body.post_caption,
-      },
-      { where: { id: req.params.id } }
-    )
+      }, {
+        where: {
+          id: req.params.id
+        }
+      })
       .then((post) => {
         res.redirect("/index");
       })
@@ -61,7 +72,11 @@ const controller = {
       });
   },
   borrarPost: function (req, res) {
-    db.Posts.destroy({ where: { id: req.params.id } })
+    db.Posts.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
       .then(() => {
         res.redirect("/index");
       })

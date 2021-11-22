@@ -1,46 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
-  <%- include('../partials/head') %>
+<%- include('../partials/head') %>
 
-  <body>
-    <%- include('../partials/header') %>
+<body>
+  <%- include('../partials/header') %>
 
-    <main>
-      <div class="uk-section uk-section-small formulario-agregar-post">
-        <div
-          class="
+  <main>
+    <div class="uk-section uk-section-small formulario-agregar-post">
+      <div class="
             uk-container uk-container-large uk-flex
             formulario-entero-agregar-post
-          "
-        >
-          <form method="POST">
-            <div class="input-group mb-3 files-upload">
-              <input type="file" class="form-control" name="image" id="image" />
-              <label class="input-group-text" for="inputGroupFile02"
-                >Upload</label
-              >
-            </div>
-            <br />
-            <div class="mb-3 files-upload">
-              <label for="formGroupExampleInput" class="form-label"
-                >Caption</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                id="post_caption"
-                placeholder="<%= posts.post_caption %>"
-                name="post_caption"
-              />
-            </div>
-            <div class="files-upload">
-              <input type="submit" value="Post" />
-            </div>
-          </form>
-        </div>
+          ">
+        <form method="POST">
+          <div class="input-group mb-3 files-upload">
+            <input type="file" class="form-control" name="image" id="image" />
+            <label class="input-group-text" for="inputGroupFile02">Upload</label>
+          </div>
+          <br />
+          <div class="mb-3 files-upload">
+            <label for="formGroupExampleInput" class="form-label">Caption</label>
+            <input type="text" class="form-control" id="post_caption" placeholder="<%= posts.post_caption %>"
+              name="post_caption" />
+          </div>
+          <div class="files-upload">
+            <input type="submit" value="Post" />
+          </div>
+        </form>
       </div>
-    </main>
+    </div>
+  </main>
 
-    <%- include('../partials/footer') %>
-  </body>
+  <%- include('../partials/footer') %>
+</body>
+
 </html>

@@ -1,6 +1,5 @@
 const comments = {
-  list: [
-    {
+  list: [{
       comentario: "Lets get it mate!",
       id_comentario: 0,
       username: "thiagosilva",
