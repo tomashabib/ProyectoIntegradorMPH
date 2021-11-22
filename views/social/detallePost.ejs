@@ -49,8 +49,8 @@
                 <% if ( app.user && app.user.id == posts.user_id) { %>
                  
                   <button> <a href="<%= posts.id %>/editarPost">Editar</a></button>
-                  <!-- <form action="<%= posts.id %>/borrarPost" method="POST"> -->
-                    <button type="submit">Borrar</button>
+                  <form action="/social/detallePost/<%= posts.id %>/borrarPost" method="POST">
+                    <button type="submit" class="btn btn-danger">Borrar</button>
                   </form>
                 <% } %>
               </div>
