@@ -19,7 +19,7 @@ module.exports = (sequelize, DataTypes) => {
   };
   const config = {
     tableName: "post",
-    timestamps: false,
+    timestamps: true,
     underscored: true,
   };
 
