@@ -81,7 +81,7 @@ const controller = {
         res.redirect("/index");
       })
       .catch((error) => {
-        return res.render(error);
+        return res.send(error);
       });
   },
 };
