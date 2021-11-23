@@ -40,6 +40,7 @@ const controller = {
     if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
     console.log(req.body);
     var posts = await db.Posts.create({
+      created_at : new Date(),
       post_caption: req.body.post_caption,
       user_id: req.session.user.id,
     });
@@ -68,6 +69,7 @@ const controller = {
   },
   update: function (req, res) {
     // console.log(req.body);
+    req.body.updated_at = new Date ();
     db.Posts.update({
         post_caption: req.body.post_caption,
       }, {
