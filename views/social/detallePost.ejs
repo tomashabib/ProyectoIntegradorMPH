@@ -48,11 +48,18 @@
                 </h3>
                 <% if ( app.user && app.user.id == posts.user_id) { %>
 
-                <button><a href="<%= posts.id %>/editarPost">Editar</a></button>
+                <button class="btn btn-primary">
+                  <a href="<%= posts.id %>/editarPost" style="color: white"
+                    >Editar</a
+                  >
+                </button>
                 <form action="<%= posts.id %>/borrarPost" method="POST">
                   <button type="submit" class="btn btn-danger">Borrar</button>
                 </form>
                 <% } %>
+              </div>
+              <div style="margin-left: 30px; font-family: Inter, sans-serif">
+                <%= posts.post_caption %>
               </div>
               <!-- Lista de comments -->
               <% posts.comments.forEach(comment => { %>

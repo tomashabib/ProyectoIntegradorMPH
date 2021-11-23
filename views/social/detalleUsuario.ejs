@@ -18,14 +18,17 @@
               <a href="/users/editarPerfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
             </div>
             <!-- BOTON FOLLOW -->
-             <% if (user.followers.find(follow => follow.follower_id == app.user.id)) { %>
-              <a href="/users/detalleUsuario/<%= user.id %>/unfollow ">Dejar de seguir</a>
-              
-              <% } else { %>
-                
-                <a href="/users/detalleUsuario/<%= user.id %>/follow ">Seguir</a>
-              
-            <% } %> 
+            <% if (app.user) { %>
+             
+              <% if (user.followers.find(follow => follow.follower_id == app.user.id)) { %>
+               <a href="/users/detalleUsuario/<%= user.id %>/unfollow ">Dejar de seguir</a>
+               
+               <% } else { %>
+                 
+                 <a href="/users/detalleUsuario/<%= user.id %>/follow ">Seguir</a>
+               
+             <% } %> 
+            <% } %>
             <!-- TERMINA BOTON FOLLOW -->
             <div>
               <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
