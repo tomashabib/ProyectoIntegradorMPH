@@ -15,7 +15,6 @@ const controller = {
           include: [{ association: "user" }, { association: "post" }],
         },
       ],
-      order: [["id", "desc"]],
     });
     if (!posts) {
       return res.render("error");
@@ -98,10 +97,11 @@ const controller = {
     if (!req.session.user) {
       res.redirect("/detallePost/" + req.params.id);
     }
-    db.Comment.create({
+    db.Comment.create({ 
       ...req.body,
       post_id: req.params.id,
       user_id: req.session.user.id,
+      order: [['id','DESC']] 
     })
       .then((post) => {
         res.redirect("/detallePost/" + req.params.id);
