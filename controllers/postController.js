@@ -1,4 +1,3 @@
-const multer = require("multer");
 const db = require("../database/models");
 const op = db.sequelize.Op;
 
@@ -38,6 +37,7 @@ const controller = {
     //   .catch((error) => {
     //     return res.render(error);
     //   });
+    if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
     console.log(req.body);
     var posts = await db.Posts.create({
       post_caption: req.body.post_caption,
@@ -46,6 +46,17 @@ const controller = {
 
     res.redirect("/index");
   },
+  storeImage: function (req, res) {
+  if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
+  db.Post.create({
+    ...req.body,
+    user_id: req.session.user.id
+  }).then(post => {
+    res.redirect('/index');
+  }).catch(error => {
+    return res.render(error)
+  })
+},
   editarPost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id);
     if (!posts) {

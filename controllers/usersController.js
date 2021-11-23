@@ -38,6 +38,7 @@ const controller = {
     res.render("social/registracion");
   },
   registerStore: async function (req, res) {
+    if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
     req.body.password = bcrypt.hashSync(req.body.password, 10);
     db.Users.create(req.body)
       .then((post) => {

@@ -2,10 +2,12 @@
 var express = require("express");
 var router = express.Router();
 var controller = require("../controllers/usersController");
+const multer = require("multer");
+const upload = multer({ dest: 'public/images/'})
 
 /* GET users listing. */
 router.get("/register", controller.showRegister);
-router.post("/register", controller.registerStore);
+router.post("/register", upload.single('profile_picture'), controller.registerStore);
 
 router.get("/detalleUsuario/:id", controller.showDetalleUsuario);
 router.get("/editarPerfil", controller.showEditarPerfil);

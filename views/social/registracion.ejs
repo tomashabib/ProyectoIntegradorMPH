@@ -14,7 +14,7 @@
             uk-flex-middle
             uk-flex-center
           " style="height: 655px">
-        <form action="/users/register" style="background-color: white" method="POST">
+        <form action="/users/register" style="background-color: white" method="POST" enctype="multipart/form-data">
           <div class="row g-3" style="margin: 20px">
             <div class="col" style="margin: 20px">
               <label for="name">First Name</label>
@@ -42,7 +42,7 @@
           <input type="password" class="form-control" id="formGroupExampleInput" placeholder="Password" name="password"
             id="password" required />
           <label for="image">Imagen de perfil</label>
-          <input type="file" />
+          <input type="file" name="profile_picture" id="profile_picture"/>
           <input type="submit" style="margin: 20px" />
       </div>
 
