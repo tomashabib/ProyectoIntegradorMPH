@@ -8,9 +8,10 @@ const controller = {
   showDetallePost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id, {
       include: [
-        { association: "author"},
-        { association: "comments", include: [{association: "commenter"}]},
-      ],  order: [['id','desc']]
+        { association: "author" },
+        { association: "comments", include: [{ association: "commenter" }] },
+      ],
+      order: [["id", "desc"]],
     });
     if (!posts) {
       return res.render("error");
@@ -18,18 +19,11 @@ const controller = {
     res.render("social/detallePost", { posts });
   },
   store: async function (req, res) {
-    // console.log(req.body);
-    // db.Posts.create({
-    //   post_caption: req.body.post_caption,
-    //   user_id: req.session.user.id,
-    // })
-    //   .then((post) => {
-    //     res.redirect("/index");
-    //   })
-    //   .catch((error) => {
-    //     return res.render(error);
-    //   });
-    if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
+    if (req.file)
+      req.body.image = (req.file.destination + req.file.filename).replace(
+        "public",
+        ""
+      );
     console.log(req.body);
     var posts = await db.Posts.create({
       post_caption: req.body.post_caption,
@@ -39,34 +33,43 @@ const controller = {
     res.redirect("/index");
   },
   storeImage: function (req, res) {
-  if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
-  db.Post.create({
-    ...req.body,
-    user_id: req.session.user.id
-  }).then(post => {
-    res.redirect('/index');
-  }).catch(error => {
-    return res.render(error)
-  })
-},
+    if (req.file)
+      req.body.image = (req.file.destination + req.file.filename).replace(
+        "public",
+        ""
+      );
+    db.Post.create({
+      ...req.body,
+      user_id: req.session.user.id,
+    })
+      .then((post) => {
+        res.redirect("/index");
+      })
+      .catch((error) => {
+        return res.render(error);
+      });
+  },
   editarPost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id);
     if (!posts) {
       return res.render("error");
     }
     res.render("social/editarPost", {
-      posts
+      posts,
     });
   },
   update: function (req, res) {
     // console.log(req.body);
-    db.Posts.update({
+    db.Posts.update(
+      {
         post_caption: req.body.post_caption,
-      }, {
+      },
+      {
         where: {
-          id: req.params.id
-        }
-      })
+          id: req.params.id,
+        },
+      }
+    )
       .then((post) => {
         res.redirect("/index");
       })
@@ -76,10 +79,10 @@ const controller = {
   },
   borrarPost: function (req, res) {
     db.Posts.destroy({
-        where: {
-          id: req.params.id
-        }
-      })
+      where: {
+        id: req.params.id,
+      },
+    })
       .then(() => {
         res.redirect("/index");
       })
@@ -87,20 +90,22 @@ const controller = {
         return res.send(error);
       });
   },
-    comment: function(req, res) {
-      if (!req.session.user) {
-        res.redirect('/detallePost/'+req.params.id);
-      }
-      db.Comment.create({
-        ...req.body,
-        post_id: req.params.id,
-        user_id: req.session.user.id
-      }).then(post => {
-        res.redirect('/detallePost/'+req.params.id);
-      }).catch(error => {
-        return res.render(error);
+  comment: function (req, res) {
+    if (!req.session.user) {
+      res.redirect("/detallePost/" + req.params.id);
+    }
+    db.Comment.create({
+      ...req.body,
+      post_id: req.params.id,
+      user_id: req.session.user.id,
+    })
+      .then((post) => {
+        res.redirect("/detallePost/" + req.params.id);
       })
-    },
+      .catch((error) => {
+        return res.render(error);
+      });
+  },
 };
 
 module.exports = controller;

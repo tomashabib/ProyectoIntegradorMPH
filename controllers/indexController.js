@@ -7,14 +7,10 @@ const op = db.Sequelize.Op;
 const controller = {
   showIndex: async function (req, res) {
     var posteos = await db.Posts.findAll({
-      include: [{
-          association: "comments",
-          include: {
-            association: "commenter"
-          }
-        },
+      include: [
+        { association: "comments", include: [{ association: "commenter" }] },
         {
-          association: "author"
+          association: "author",
         },
       ],
     });
@@ -23,26 +19,27 @@ const controller = {
     }
 
     res.render("social/index", {
-      posteos
+      posteos,
     });
   },
   showResultadoBusqueda: async function (req, res, next) {
     const posts = await db.Posts.findAll({
       where: {
-        [op.or]: [{
+        [op.or]: [
+          {
             post_caption: {
-              [op.like]: "%" + req.query.criteria + "%"
-            }
+              [op.like]: "%" + req.query.criteria + "%",
+            },
           },
           {
             image: {
-              [op.like]: "%" + req.query.criteria + "%"
-            }
+              [op.like]: "%" + req.query.criteria + "%",
+            },
           },
         ],
       },
       include: {
-        association: "author"
+        association: "author",
       },
     });
     res.render("social/resultadoBusqueda", {
