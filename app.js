@@ -45,7 +45,7 @@ app.use(async (req, res, next) => {
   if (req.cookies.user !== undefined && req.session.user === undefined) {
     req.session.user = req.cookies.user;
   }
-  next(); //deje clase 19 1:35:00
+  next();
 });
 // middleware session
 app.use(async (req, res, next) => {

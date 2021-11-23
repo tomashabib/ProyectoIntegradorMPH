@@ -8,7 +8,7 @@ const upload = multer({ dest: "public/images/" });
 
 /* GET users listing. */
 router.get("/agregarPost", controller.showAgregarPost);
-router.post("/agregarPost", upload.single("image"), controller.store);
+router.post("/agregarPost", upload.single("image"), controller.storeImage);
 
 router.get("/detallePost/:id/editarPost", controller.editarPost);
 router.post("/detallePost/:id/editarPost", controller.update);
