@@ -6,4 +6,7 @@ var controller = require("../controllers/indexController");
 router.get("/index", controller.showIndex);
 router.get("/resultadoBusqueda", controller.showResultadoBusqueda);
 
+router.get("/feed/:id/like", controller.like);
+router.get("/feed/:id/unlike", controller.unlike);
+
 module.exports = router;

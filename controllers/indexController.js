@@ -12,6 +12,9 @@ const controller = {
         {
           association: "author",
         },
+        {
+          association: "likes",
+        },
       ],
     });
     if (!posteos) {
@@ -46,6 +49,35 @@ const controller = {
       posts,
       criteria: req.query.criteria,
     });
+  },
+  like: function (req, res) {
+    if (!req.session.user) {
+      res.redirect("/index");
+    }
+    db.Like.create({
+      user_id: req.session.user.id,
+      post_id: req.params.id,
+    })
+      .then((like) => {
+        res.redirect("/index");
+      })
+      .catch((error) => {
+        return res.send(error);
+      });
+  },
+  unlike: function (req, res) {
+    if (!req.session.user) {
+      res.redirect("/index");
+    }
+    db.Like.destroy({
+      where: { user_id: req.session.user.id, post_id: req.params.id },
+    })
+      .then(() => {
+        res.redirect("/index");
+      })
+      .catch((error) => {
+        return res.render(error);
+      });
   },
 };
 

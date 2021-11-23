@@ -3,15 +3,23 @@ var express = require("express");
 var router = express.Router();
 var controller = require("../controllers/usersController");
 const multer = require("multer");
-const upload = multer({ dest: 'public/images/'})
+const upload = multer({ dest: "public/images/" });
 
 /* GET users listing. */
 router.get("/register", controller.showRegister);
-router.post("/register", upload.single('profile_picture'), controller.registerStore);
+router.post(
+  "/register",
+  upload.single("profile_picture"),
+  controller.registerStore
+);
+
+router.get("/editarPerfil", controller.showEditarPerfil);
+router.get("/miPerfil/:id", controller.showMiPerfil);
 
 router.get("/detalleUsuario/:id", controller.showDetalleUsuario);
-router.get("/editarPerfil", controller.showEditarPerfil);
-router.get("/miPerfil/:id", controller.showMiPerfil); //deje clase Relaciones Sequelize 1:00:00
+router.get("/detalleUsuario/:id/follow", controller.follow);
+router.get("/detalleUsuario/:id/unfollow", controller.unfollow);
+
 router.all("/login", controller.showLogin);
 router.all("/logout", controller.logout);
 

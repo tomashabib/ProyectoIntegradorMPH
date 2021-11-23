@@ -10,6 +10,10 @@ const controller = {
       include: [
         { association: "author" },
         { association: "comments", include: [{ association: "commenter" }] },
+        {
+          association: "likes",
+          include: [{ association: "user" }, { association: "post" }],
+        },
       ],
       order: [["id", "desc"]],
     });
@@ -101,6 +105,35 @@ const controller = {
     })
       .then((post) => {
         res.redirect("/detallePost/" + req.params.id);
+      })
+      .catch((error) => {
+        return res.render(error);
+      });
+  },
+  like: function (req, res) {
+    if (!req.session.user) {
+      res.redirect(`/post/detallePost/${req.params.id}`);
+    }
+    db.Like.create({
+      user_id: req.session.user.id,
+      post_id: req.params.id,
+    })
+      .then((like) => {
+        res.redirect(`/post/detallePost/${req.params.id}`);
+      })
+      .catch((error) => {
+        return res.send(error);
+      });
+  },
+  unlike: function (req, res) {
+    if (!req.session.user) {
+      res.redirect(`/post/detallePost/${req.params.id}`);
+    }
+    db.Like.destroy({
+      where: { user_id: req.session.user.id, post_id: req.params.id },
+    })
+      .then(() => {
+        res.redirect(`/post/detallePost/${req.params.id}`);
       })
       .catch((error) => {
         return res.render(error);

@@ -30,6 +30,10 @@ module.exports = (sequelize, DataTypes) => {
       as: "comments",
       foreignKey: "post_id",
     });
+    Posts.hasMany(models.Like, {
+      as: "likes",
+      foreignKey: "post_id",
+    });
     Posts.belongsTo(models.Users, {
       as: "author",
       foreignKey: "user_id",

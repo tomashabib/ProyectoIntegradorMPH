@@ -17,11 +17,21 @@
               <h3 class="uk-margin-remove nombre-perfil"><%= user.username%></h3>
               <a href="/users/editarPerfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
             </div>
+            <!-- BOTON FOLLOW -->
+             <% if (user.followers.find(follow => follow.follower_id == app.user.id)) { %>
+              <a href="/users/detalleUsuario/<%= user.id %>/unfollow ">Dejar de seguir</a>
+              
+              <% } else { %>
+                
+                <a href="/users/detalleUsuario/<%= user.id %>/follow ">Seguir</a>
+              
+            <% } %> 
+            <!-- TERMINA BOTON FOLLOW -->
             <div>
               <ul class="red-usuario uk-flex uk-flex-between uk-width-1-2">
-                <li>100 posts</li>
-                <li>200 seguidores</li>
-                <li>300 seguidos</li>
+                <li><%= user.post.length %> posts </li>
+                <li><%= user.followers.length %> seguidores</li>
+                <li><%= user.following.length %> seguidos</li>
               </ul>
             </div>
           </div>

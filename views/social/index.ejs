@@ -18,7 +18,7 @@
             ">
           <% posteos.forEach(post => { %>
           <article class="post uk-card-default uk-flex uk-flex-column">
-            <div class="info-usuario uk-flex">
+            <div class="info-usuario uk-flex" id="post_<%= post.id %> ">
               <div>
                 <a href="/users/detalleUsuario/<%= post.user_id %>"><img src="<%= post.author.profile_picture %> "
                     alt="" /></a>
@@ -36,7 +36,26 @@
             <div class="post-reacciones">
               <ul class="post-icons uk-flex uk-flex-between">
                 <li>
-                  <span class="" uk-icon="icon:heart; ratio: 1.3"></span>
+                  <% if (post.likes.find(like => like.user_id == app.user.id)){%>
+                    <a href="/feed/<%= post.id %>/unlike "
+                      ><span
+                        class=""
+                        uk-icon="icon:heart; ratio: 1.3"
+                        style="color: green"
+                      > <%= post.likes.length %> Likes    </span
+                    ></a>
+  
+                    <% } else { %>
+  
+                    <a href="/feed/<%= post.id %>/like "
+                      ><span
+                        class=""
+                        uk-icon="icon:heart; ratio: 1.3"
+                        style="color: red"
+                      ><%= post.likes.length %> Likes    </span
+                    ></a>
+  
+                    <% } %>
                 </li>
                 <li>
                   <span class="" uk-icon="icon:comments; ratio: 1.3"></span>

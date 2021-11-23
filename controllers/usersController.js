@@ -84,6 +84,8 @@ const controller = {
         {
           association: "post",
         },
+        { association: "followers" },
+        { association: "following" },
       ],
     });
 
@@ -103,15 +105,42 @@ const controller = {
         {
           association: "post",
         },
+        { association: "followers" },
+        { association: "following" },
       ],
     });
-    // if (!user) {
-    //   return res.render("error");
-    // }
-
     res.render("social/miPerfil", {
       user,
     });
+  },
+  follow: function (req, res) {
+    if (!req.session.user) {
+      res.redirect(`/users/detalleUsuario/${req.params.id}`);
+    }
+    db.Follow.create({
+      follower_id: req.session.user.id,
+      following_id: req.params.id,
+    })
+      .then((follow) => {
+        res.redirect(`/users/detalleUsuario/${req.params.id}`);
+      })
+      .catch((error) => {
+        return res.send(error);
+      });
+  },
+  unfollow: function (req, res) {
+    if (!req.session.user) {
+      res.redirect(`/users/detalleUsuario/${req.params.id}`);
+    }
+    db.Follow.destroy({
+      where: { follower_id: req.session.user.id, following_id: req.params.id },
+    })
+      .then(() => {
+        res.redirect(`/users/detalleUsuario/${req.params.id}`);
+      })
+      .catch((error) => {
+        return res.render(error);
+      });
   },
 };
 

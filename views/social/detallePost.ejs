@@ -90,14 +90,40 @@
                       name="content"
                       id="content"
                     ></textarea>
-                    <label for="floatingTextarea">Contenido</label>
+                    <label for="floatingTextarea"></label>
                   </div>
                   <button type="submit" class="btn btn-primary">
                     Comentar
                   </button>
-                </form>
+                  <!-- BOTON LIKE -->
+                  <% if (posts.likes.find(like => like.user_id == app.user.id)){
+                  %>
+                  <a href="/post/detallePost/<%= posts.id %>/unlike "
+                    ><span
+                      class=""
+                      uk-icon="icon:heart; ratio: 1.3"
+                      style="color: green"
+                    >
+                      <%= posts.likes.length %> likes
+                    </span></a
+                  >
 
-                <% } %>
+                  <% } else { %>
+
+                  <a href="/post/detallePost/<%= posts.id %>/like "
+                    ><span
+                      class=""
+                      uk-icon="icon:heart; ratio: 1.3"
+                      style="color: red"
+                    >
+                      <%= posts.likes.length %> likes</span
+                    ></a
+                  >
+
+                  <% } %>
+                  <!-- TERMINA BOTON LIKE -->
+                  <% } %>
+                </form>
               </div>
             </article>
           </section>
