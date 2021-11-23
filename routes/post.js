@@ -15,5 +15,6 @@ router.post("/detallePost/:id/editarPost", controller.update);
 router.post("/detallePost/:id/borrarPost", controller.borrarPost);
 
 router.get("/detallePost/:id", controller.showDetallePost);
+router.post("/detallePost/:id", controller.comment);
 
 module.exports = router;

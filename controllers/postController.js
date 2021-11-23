@@ -7,23 +7,15 @@ const controller = {
   },
   showDetallePost: async function (req, res) {
     var posts = await db.Posts.findByPk(req.params.id, {
-      include: [{
-          association: "author"
-        },
-        {
-          association: "comments",
-          include: [{
-            association: "commenter"
-          }]
-        },
-      ],
+      include: [
+        { association: "author"},
+        { association: "comments", include: [{association: "commenter"}]},
+      ],  order: [['id','desc']]
     });
     if (!posts) {
       return res.render("error");
     }
-    res.render("social/detallePost", {
-      posts
-    });
+    res.render("social/detallePost", { posts });
   },
   store: async function (req, res) {
     // console.log(req.body);
@@ -40,7 +32,6 @@ const controller = {
     if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
     console.log(req.body);
     var posts = await db.Posts.create({
-      created_at : new Date(),
       post_caption: req.body.post_caption,
       user_id: req.session.user.id,
     });
@@ -69,7 +60,6 @@ const controller = {
   },
   update: function (req, res) {
     // console.log(req.body);
-    req.body.updated_at = new Date ();
     db.Posts.update({
         post_caption: req.body.post_caption,
       }, {
@@ -97,6 +87,20 @@ const controller = {
         return res.send(error);
       });
   },
+    comment: function(req, res) {
+      if (!req.session.user) {
+        res.redirect('/detallePost/'+req.params.id);
+      }
+      db.Comment.create({
+        ...req.body,
+        post_id: req.params.id,
+        user_id: req.session.user.id
+      }).then(post => {
+        res.redirect('/detallePost/'+req.params.id);
+      }).catch(error => {
+        return res.render(error);
+      })
+    },
 };
 
 module.exports = controller;
