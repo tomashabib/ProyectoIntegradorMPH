@@ -16,6 +16,13 @@
           " style="height: 655px">
         <form action="/users/register" style="background-color: white" method="POST" enctype="multipart/form-data">
           <div class="row g-3" style="margin: 20px">
+            <% if (locals.errors) { %>
+              <% errors.forEach(error => {%>
+                <div class="alert alert-danger" role="alert">
+                  <%= error %>
+                </div>
+                <% })%>
+            <% } %>
             <div class="col" style="margin: 20px">
               <label for="name">First Name</label>
               <input type="text" class="form-control" placeholder="First name" aria-label="First name" name="firstName"
@@ -35,7 +42,7 @@
           </div>
           <div class="mb-3" style="margin: 20px">
             <label for="formGroupExampleInput" class="form-label">Email</label>
-            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email"
+            <input type="email" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email"
               id="email" required />
           </div>
           <label for="formGroupExampleInput" class="form-label" id="password" name="password">Password</label>

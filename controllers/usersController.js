@@ -6,9 +6,11 @@ const controller = {
   showLogin: async function (req, res) {
     if (req.method == "POST") {
       const user = await db.Users.findOne({
-        where: [{
-          username: req.body.username
-        }],
+        where: [
+          {
+            username: req.body.username,
+          },
+        ],
       });
       if (!user) {
         res.send("No existe el Usuario");
@@ -17,7 +19,7 @@ const controller = {
         req.session.user = user;
         if (req.body.recordarme) {
           res.cookie("user", user, {
-            maxAge: 1000 * 60 * 60 * 24
+            maxAge: 1000 * 60 * 60 * 24,
           });
         }
         res.redirect("/index");
@@ -38,7 +40,34 @@ const controller = {
     res.render("social/registracion");
   },
   registerStore: async function (req, res) {
-    if (req.file) req.body.image = (req.file.destination + req.file.filename).replace('public', '');
+    if (req.file)
+      req.body.image = (req.file.destination + req.file.filename).replace(
+        "public",
+        ""
+      );
+    const errors = [];
+    var existeUsername = await db.Users.findOne({
+      where: {
+        username: req.body.username,
+      },
+    });
+    var existeEmail = await db.Users.findOne({
+      where: {
+        email: req.body.email,
+      },
+    });
+    if (existeEmail) {
+      errors.push("Ya hay un usuario registrado con ese email");
+    }
+    if (existeUsername) {
+      errors.push("Ya hay un usuario registrado con ese usuario");
+    }
+    if (req.body.password.length < 5) {
+      errors.push("La contrasena es muy corta");
+    }
+    if (errors.length > 0) {
+      return res.render("social/registracion", { errors });
+    }
     req.body.password = bcrypt.hashSync(req.body.password, 10);
     db.Users.create(req.body)
       .then((post) => {
@@ -52,13 +81,15 @@ const controller = {
   // funcion para clasificar por username
   showDetalleUsuario: async function (req, res) {
     var user = await db.Users.findByPk(req.params.id, {
-      include: [{
-        association: "post"
-      }],
+      include: [
+        {
+          association: "post",
+        },
+      ],
     });
 
     res.render("social/detalleUsuario", {
-      user
+      user,
     });
   },
   showEditarPerfil: function (req, res) {
@@ -69,16 +100,18 @@ const controller = {
       res.send("No estas logueado");
     }
     var user = await db.Users.findByPk(req.session.user.id, {
-      include: [{
-        association: "post"
-      }],
+      include: [
+        {
+          association: "post",
+        },
+      ],
     });
     // if (!user) {
     //   return res.render("error");
     // }
 
     res.render("social/miPerfil", {
-      user
+      user,
     });
   },
 };
