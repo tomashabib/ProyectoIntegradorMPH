@@ -12,10 +12,7 @@ const controller = {
           },
         ],
       });
-      if (!user) {
-        res.send("No existe el Usuario");
-      }
-      if (bcrypt.compareSync(req.body.password, user.password)) {
+      if (user && bcrypt.compareSync(req.body.password, user.password)) {
         req.session.user = user;
         if (req.body.recordarme) {
           res.cookie("user", user, {
@@ -24,7 +21,9 @@ const controller = {
         }
         res.redirect("/index");
       } else {
-        res.send("Constrasena Incorrecta");
+        res.render("social/login", {
+          error: "El usuario o la contrasena son incorrectas",
+        });
       }
     } else {
       res.render("social/login");
