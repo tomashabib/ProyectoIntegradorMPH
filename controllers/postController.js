@@ -21,20 +21,6 @@ const controller = {
     }
     res.render("social/detallePost", { posts });
   },
-  store: async function (req, res) {
-    if (req.file)
-      req.body.image = (req.file.destination + req.file.filename).replace(
-        "public",
-        ""
-      );
-    console.log(req.body);
-    var posts = await db.Posts.create({
-      post_caption: req.body.post_caption,
-      user_id: req.session.user.id,
-    });
-
-    res.redirect("/index");
-  },
   storeImage: function (req, res) {
     if (req.file)
       req.body.image = (req.file.destination + req.file.filename).replace(

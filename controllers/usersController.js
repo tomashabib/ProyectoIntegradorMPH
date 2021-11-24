@@ -8,7 +8,7 @@ const controller = {
       const user = await db.Users.findOne({
         where: [
           {
-            username: req.body.username,
+            email: req.body.email,
           },
         ],
       });

@@ -18,7 +18,7 @@
               <a href="/users/editarPerfil" uk-icon="icon:cog; ratio: 1.2" class="uk-margin-left"></a>
             </div>
             <!-- BOTON FOLLOW -->
-            <% if (app.user) { %>
+            <% if (app.user && app.user.id != user.id) { %>
              
               <% if (user.followers.find(follow => follow.follower_id == app.user.id)) { %>
                <a href="/users/detalleUsuario/<%= user.id %>/unfollow ">Dejar de seguir</a>
