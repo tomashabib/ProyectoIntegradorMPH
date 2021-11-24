@@ -1,9 +1,9 @@
 var express = require("express");
 var router = express.Router();
-var controller = require("../controllers/postController");
 var posts = require("../modules/posts");
 const multer = require("multer");
 const upload = multer({ dest: "public/images/" });
+var controller = require("../controllers/postController");
 // const upload = multer({ dest: 'public/images/'})
 
 /* GET users listing. */

@@ -89,7 +89,7 @@
                 <!-- Termina lista de comments -->
                 <% if ( app.user ) { %>
 
-                <form method="POST">
+                <form method="POST" action="/post/detallePost/<%= posts.id %>">
                   <div class="form-floating">
                     <textarea
                       class="form-control"

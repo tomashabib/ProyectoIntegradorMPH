@@ -41,9 +41,10 @@ const controller = {
         "public",
         ""
       );
-    db.Post.create({
-      ...req.body,
+    db.Posts.create({
+      image: req.body.image,
       user_id: req.session.user.id,
+      post_caption: req.body.post_caption,
     })
       .then((post) => {
         res.redirect("/index");
@@ -97,14 +98,14 @@ const controller = {
     if (!req.session.user) {
       res.redirect("/detallePost/" + req.params.id);
     }
-    db.Comment.create({ 
-      ...req.body,
+    db.Comments.create({
+      com: req.body.com,
       post_id: req.params.id,
       user_id: req.session.user.id,
-      order: [['id','DESC']] 
+      order: [["id", "DESC"]],
     })
       .then((post) => {
-        res.redirect("/detallePost/" + req.params.id);
+        res.redirect("/post/detallePost/" + req.params.id);
       })
       .catch((error) => {
         return res.render(error);
