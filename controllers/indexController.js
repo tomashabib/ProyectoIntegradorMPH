@@ -26,7 +26,7 @@ const controller = {
     });
   },
   showResultadoBusqueda: async function (req, res, next) {
-    const posts = await db.Posts.findAll({
+    const posts = await db.Posts.findAll({order: [["id", "DESC"]],
       where: {
         [op.or]: [
           {
