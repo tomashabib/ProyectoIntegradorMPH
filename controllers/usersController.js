@@ -42,7 +42,7 @@ const controller = {
     if (req.file)
       req.body.profile_picture = (
         req.file.destination + req.file.filename
-      ).replace("public", "");
+      ).replace("public", ""); // ==> /images/3e5ea7e5558510ade29a1102582dca68
     const errors = [];
     var existeUsername = await db.Users.findOne({
       where: {

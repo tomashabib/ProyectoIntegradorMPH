@@ -6,7 +6,10 @@
     <%- include('../partials/header') %>
 
     <main>
-      <div class="uk-section uk-section-small" style="height: 750px">
+      <div
+        class="uk-section uk-section-small"
+        style="height: 750px; display: flex"
+      >
         <div
           class="
             uk-container
@@ -15,7 +18,12 @@
             uk-flex-middle
             uk-flex-center
           "
-          style="background-color: white; height: 200px; width: 30%"
+          style="
+            background-color: white;
+            /* height: 200px; */
+            width: 40%;
+            flex-direction: column;
+          "
         >
           <% if (posts.length == 0) { %>
           <div class="alert alert-danger" role="alert">

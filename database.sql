@@ -86,4 +86,7 @@ VALUES (DEFAULT, 'Lets get it mate!', 1, 1);
 INSERT INTO Comments (comment_id, com, user_id, post_id)
 VALUES (DEFAULT, 'Mucha suerte en esta nueva etapa amigo.', 2, 2);
 
+UPDATE `proyecto_integrador_mph`.`users` SET `profile_picture` = 'https://estaticos-cdn.sport.es/clip/24a12ea8-9380-4181-ba6c-dda114a22c30_alta-libre-aspect-ratio_default_0.jpg' WHERE (`id` = '2');
+UPDATE `proyecto_integrador_mph`.`users` SET `profile_picture` = 'https://www.soyfutbol.com/__export/1628333569988/sites/debate/img/2021/08/07/messi_psg_contrato_firma_crop1628333423417.jpg_943222218.jpg' WHERE (`id` = '1');
+
 -- Dump completed on 2021-10-04 13:03:19

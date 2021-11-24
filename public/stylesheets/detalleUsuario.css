@@ -25,6 +25,8 @@
 }
 .posteos-seccion {
   background-color: white;
+  display: flex;
+  flex-direction: row;
 }
 .foto-perfil {
   height: 170px;
