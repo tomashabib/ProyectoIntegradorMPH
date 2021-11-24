@@ -40,10 +40,9 @@ const controller = {
   },
   registerStore: async function (req, res) {
     if (req.file)
-      req.body.image = (req.file.destination + req.file.filename).replace(
-        "public",
-        ""
-      );
+      req.body.profile_picture = (
+        req.file.destination + req.file.filename
+      ).replace("public", "");
     const errors = [];
     var existeUsername = await db.Users.findOne({
       where: {
